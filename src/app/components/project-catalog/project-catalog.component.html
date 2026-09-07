@@ -9,6 +9,8 @@
             <span>Search Active (List View)</span>
           } @else if (isCategoryFiltered) {
             <span>{{ selectedCategory }} (List View)</span>
+          } @else if (isAllCategories) {
+            <span>All Categories (List View)</span>
           } @else {
             <span>Featured Showcase (Grid View)</span>
           }
@@ -27,6 +29,8 @@
           <span><strong class="text-slate-900 font-bold">{{ displayedProjects.length }}</strong> results found</span>
         } @else if (isCategoryFiltered) {
           <span>Showing all <strong class="text-slate-900 font-bold">{{ displayedProjects.length }}</strong> {{ selectedCategory }} projects</span>
+        } @else if (isAllCategories) {
+          <span>Showing all <strong class="text-slate-900 font-bold">{{ displayedProjects.length }}</strong> engineering projects</span>
         } @else {
           <span>Showing <strong class="text-slate-900 font-bold">{{ displayedProjects.length }}</strong> featured projects (1 per discipline)</span>
         }
@@ -49,7 +53,9 @@
               (ngModelChange)="onCategoryChange($event)"
               class="w-full bg-slate-50 hover:bg-slate-100/70 focus:bg-white text-slate-800 text-sm font-medium rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 py-2.5 pl-3.5 pr-10 outline-none transition-all cursor-pointer">
               @for (cat of categories; track cat) {
-                <option [value]="cat">{{ cat }}</option>
+                <option [value]="cat">
+                  {{ cat === 'Featured' ? 'Featured Showcase (Sample)' : (cat === 'All Categories' ? 'All Categories (Full Catalog)' : cat) }}
+                </option>
               }
             </select>
             <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none text-slate-400">
@@ -138,6 +144,9 @@
     @if (isListView) {
       <div class="space-y-4">
         
+        <!-- List Results Scroll Anchor -->
+        <div id="catalog-results-top" class="scroll-mt-24"></div>
+
         <!-- List Context Bar -->
         <div class="flex items-center justify-between text-xs text-slate-500 font-medium px-1">
           @if (isSearching) {
@@ -145,8 +154,13 @@
             <button type="button" (click)="searchQuery = ''; onSearchChange()" class="text-blue-600 hover:text-blue-800 font-semibold cursor-pointer">
               Clear Search
             </button>
-          } @else {
+          } @else if (isCategoryFiltered) {
             <span>Showing all <strong>{{ displayedProjects.length }}</strong> projects in <strong>{{ selectedCategory }}</strong></span>
+            <button type="button" (click)="resetFilters()" class="text-blue-600 hover:text-blue-800 font-semibold cursor-pointer">
+              ← Back to Featured Showcase
+            </button>
+          } @else {
+            <span>Showing all <strong>{{ displayedProjects.length }}</strong> projects across all categories</span>
             <button type="button" (click)="resetFilters()" class="text-blue-600 hover:text-blue-800 font-semibold cursor-pointer">
               ← Back to Featured Showcase
             </button>
@@ -167,7 +181,7 @@
 
             <!-- Table Body Rows -->
             <div class="divide-y divide-slate-100">
-              @for (project of displayedProjects; track project.id) {
+              @for (project of pagedProjects; track project.id) {
                 <div class="p-4 sm:p-5 md:px-6 grid grid-cols-1 md:grid-cols-12 gap-4 items-center hover:bg-slate-50/70 transition-colors">
                   
                   <!-- Col 1: Category, Title, Short Description (md:col-span-5) -->
@@ -265,6 +279,70 @@
             </div>
 
           </div>
+
+          <!-- Pagination Controls Bar (Shown only when list view and total results > 10) -->
+          @if (totalPages > 1) {
+            <div class="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+              <!-- Counter range -->
+              <div class="text-xs sm:text-sm text-slate-500 font-medium">
+                Showing <span class="font-semibold text-slate-900">{{ pageStartIndex }}</span> to <span class="font-semibold text-slate-900">{{ pageEndIndex }}</span> of <span class="font-semibold text-slate-900">{{ displayedProjects.length }}</span> projects
+              </div>
+
+              <!-- Page Navigation -->
+              <nav class="inline-flex items-center gap-1 shadow-2xs bg-white p-1 rounded-xl border border-slate-200" aria-label="Pagination">
+                <!-- Previous Button -->
+                <button
+                  type="button"
+                  (click)="prevPage()"
+                  [disabled]="currentPage === 1"
+                  [class.opacity-40]="currentPage === 1"
+                  [class.cursor-not-allowed]="currentPage === 1"
+                  [class.cursor-pointer]="currentPage > 1"
+                  class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-700 hover:bg-slate-100 transition-colors disabled:hover:bg-transparent">
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="currentColor">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                  </svg>
+                  <span>Previous</span>
+                </button>
+
+                <!-- Page Number Buttons -->
+                <div class="flex items-center gap-1">
+                  @for (item of getPageNumbers(); track $index) {
+                    @if (item === '...') {
+                      <span class="w-8 h-8 flex items-center justify-center text-xs text-slate-400 font-medium select-none">
+                        …
+                      </span>
+                    } @else {
+                      <button
+                        type="button"
+                        (click)="onPageClick(item)"
+                        class="w-8 h-8 flex items-center justify-center text-xs font-semibold rounded-lg transition-all cursor-pointer"
+                        [ngClass]="currentPage === item 
+                          ? 'bg-blue-600 text-white shadow-xs' 
+                          : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'">
+                        {{ item }}
+                      </button>
+                    }
+                  }
+                </div>
+
+                <!-- Next Button -->
+                <button
+                  type="button"
+                  (click)="nextPage()"
+                  [disabled]="currentPage === totalPages"
+                  [class.opacity-40]="currentPage === totalPages"
+                  [class.cursor-not-allowed]="currentPage === totalPages"
+                  [class.cursor-pointer]="currentPage < totalPages"
+                  class="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-lg text-slate-700 hover:bg-slate-100 transition-colors disabled:hover:bg-transparent">
+                  <span>Next</span>
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg>
+                </button>
+              </nav>
+            </div>
+          }
         } @else {
           <!-- Empty State -->
           <div class="bg-white rounded-xl border border-slate-200/90 p-12 text-center max-w-md mx-auto shadow-xs">

@@ -4,7 +4,7 @@ import { Project } from '../models/project.model';
 export const WEB_DEV_PROJECTS: Project[] = [
   {
     id: 'web-telemedicine-portal',
-    title: 'TeleMedix: Enterprise Telemedicine & Consultation Portal',
+    title: 'Online Doctor Video Consultation Portal',
     category: 'Web Dev',
     techStack: ['Angular', 'Java Spring Boot', 'MySQL', 'WebRTC'],
     price: 4999,
@@ -22,7 +22,7 @@ export const WEB_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'web-cloud-ide-workspace',
-    title: 'CloudForge: Collaborative In-Browser IDE & Code Execution Workspace',
+    title: 'Online Code Compiler & In-Browser IDE',
     category: 'Web Dev',
     techStack: ['Angular', 'Java Spring Boot', 'MySQL', 'Docker API'],
     price: 5499,
@@ -40,7 +40,7 @@ export const WEB_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'web-ecommerce-marketplace',
-    title: 'ApexMart: Enterprise Multi-Vendor E-Commerce Platform',
+    title: 'E-commerce Website with Cart & Payment',
     category: 'Web Dev',
     techStack: ['Angular', 'Java Spring Boot', 'MySQL', 'Spring Security'],
     price: 4899,
@@ -58,7 +58,7 @@ export const WEB_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'web-hospital-management',
-    title: 'CareSync: Integrated Hospital ERP & Patient Health Records',
+    title: 'Online Hospital Appointment System',
     category: 'Web Dev',
     techStack: ['Angular', 'Java Spring Boot', 'MySQL', 'Hibernate'],
     price: 4799,
@@ -76,7 +76,7 @@ export const WEB_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'web-college-erp-portal',
-    title: 'UniSphere: Autonomous College ERP & Academic Administration Portal',
+    title: 'College Management Portal',
     category: 'Web Dev',
     techStack: ['Angular', 'Java Spring Boot', 'MySQL', 'JWT'],
     price: 4699,
@@ -94,7 +94,7 @@ export const WEB_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'web-blogging-cms-platform',
-    title: 'BytePress: Developer Publishing CMS & Interactive Tech Blog Portal',
+    title: 'Blogging & Article Publishing Website',
     category: 'Web Dev',
     techStack: ['Angular', 'Java Spring Boot', 'MySQL', 'Quill.js'],
     price: 4199,
@@ -112,7 +112,7 @@ export const WEB_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'web-food-delivery-system',
-    title: 'QuickBite: On-Demand Food Delivery Management & Ordering System',
+    title: 'Food Ordering Website',
     category: 'Web Dev',
     techStack: ['Angular', 'Java Spring Boot', 'MySQL', 'Stripe API'],
     price: 4899,
@@ -130,7 +130,7 @@ export const WEB_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'web-job-recruitment-portal',
-    title: 'HirePulse: Intelligent Recruitment & ATS Applicant Tracking System',
+    title: 'Job Portal Website',
     category: 'Web Dev',
     techStack: ['Angular', 'Java Spring Boot', 'MySQL', 'REST API'],
     price: 4599,
@@ -148,7 +148,7 @@ export const WEB_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'web-library-management-system',
-    title: 'BiblioTech: Digital University Library & E-Resource Cataloging System',
+    title: 'Digital Library & Book Borrowing System',
     category: 'Web Dev',
     techStack: ['Angular', 'Java Spring Boot', 'MySQL', 'Spring Batch'],
     price: 3999,
@@ -160,13 +160,13 @@ export const WEB_DEV_PROJECTS: Project[] = [
       'Instant book cataloging via ISBN lookup with Google Books API',
       'Automated overdue fine computation via scheduled Spring Batch cron jobs',
       'Student book reservation and lending history dashboards',
-      'Digital e-book PDF viewer embedded directly in the Angular frontend',
+      'Digital e-book PDF viewer integrated directly in the Angular frontend',
       'Full documentation package with UML sequence diagrams and test data'
     ]
   },
   {
     id: 'web-portfolio-builder-saas',
-    title: 'DevShowcase: Dynamic Developer Portfolio Builder & Resume Engine',
+    title: 'Online Portfolio & Resume Builder',
     category: 'Web Dev',
     techStack: ['Angular', 'Java Spring Boot', 'MySQL', 'TailwindCSS'],
     price: 4399,
@@ -184,7 +184,7 @@ export const WEB_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'web-event-ticketing-booking',
-    title: 'PassPortal: Online Event Booking & QR Ticket Generation Platform',
+    title: 'Online Event Ticket Booking Website',
     category: 'Web Dev',
     techStack: ['Angular', 'Java Spring Boot', 'MySQL', 'ZXing'],
     price: 4499,
@@ -202,7 +202,7 @@ export const WEB_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'web-nexbuy-microservices',
-    title: 'NexBuy — Microservices E-Commerce Platform',
+    title: 'Scalable Microservices E-Commerce Platform',
     category: 'Web Dev',
     techStack: ['Angular', 'Spring Boot', 'Spring Cloud', 'Netflix Eureka', 'Apache Kafka', 'Docker', 'MySQL'],
     price: 11999,

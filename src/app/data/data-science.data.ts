@@ -4,7 +4,7 @@ import { Project } from '../models/project.model';
 export const DATA_SCIENCE_PROJECTS: Project[] = [
   {
     id: 'ds-financial-fraud-detection',
-    title: 'Credit Card & Financial Transaction Fraud Detection Pipeline',
+    title: 'Credit Card Fraud Detection System',
     category: 'Data Science',
     techStack: ['Python', 'XGBoost', 'Scikit-Learn', 'Pandas', 'Docker'],
     price: 4299,
@@ -22,7 +22,7 @@ export const DATA_SCIENCE_PROJECTS: Project[] = [
   },
   {
     id: 'ds-icu-mortality-forecasting',
-    title: 'Predictive Healthcare Analytics & ICU Mortality Forecasting',
+    title: 'Patient Health Risk & Mortality Predictor',
     category: 'Data Science',
     techStack: ['Python', 'LightGBM', 'Seaborn', 'Streamlit', 'NumPy'],
     price: 4499,
@@ -40,7 +40,7 @@ export const DATA_SCIENCE_PROJECTS: Project[] = [
   },
   {
     id: 'ds-retail-sales-forecasting',
-    title: 'Multivariate Retail Sales & Demand Forecasting with Prophet & LSTM',
+    title: 'Sales Prediction Dashboard',
     category: 'Data Science',
     techStack: ['Python', 'Prophet', 'PyTorch', 'Pandas', 'Streamlit'],
     price: 4299,
@@ -58,7 +58,7 @@ export const DATA_SCIENCE_PROJECTS: Project[] = [
   },
   {
     id: 'ds-customer-segmentation-rfm',
-    title: 'Customer Lifetime Value & RFM Behavioral Segmentation Engine',
+    title: 'Customer Buying Pattern Analyzer',
     category: 'Data Science',
     techStack: ['Python', 'Scikit-Learn', 'K-Means', 'Seaborn', 'Dash'],
     price: 3999,
@@ -76,7 +76,7 @@ export const DATA_SCIENCE_PROJECTS: Project[] = [
   },
   {
     id: 'ds-stock-market-trend-analysis',
-    title: 'Algorithmic Stock Trend Prediction & Volatility Backtesting Engine',
+    title: 'Stock Price Trend Predictor',
     category: 'Data Science',
     techStack: ['Python', 'Scikit-Learn', 'XGBoost', 'Pandas-TA', 'Streamlit'],
     price: 4699,
@@ -94,7 +94,7 @@ export const DATA_SCIENCE_PROJECTS: Project[] = [
   },
   {
     id: 'ds-interactive-eda-dashboard',
-    title: 'Automated Exploratory Data Analysis & Feature Profiling Platform',
+    title: 'Automated Data Analysis & Profiling Tool',
     category: 'Data Science',
     techStack: ['Python', 'Dash', 'Plotly', 'Pandas', 'Scikit-Learn'],
     price: 3999,
@@ -112,7 +112,7 @@ export const DATA_SCIENCE_PROJECTS: Project[] = [
   },
   {
     id: 'ds-telecom-churn-prediction',
-    title: 'Customer Churn Prediction & Retention Strategy Pipeline',
+    title: 'Customer Churn Predictor',
     category: 'Data Science',
     techStack: ['Python', 'Scikit-Learn', 'CatBoost', 'SHAP', 'Flask'],
     price: 4199,
@@ -130,7 +130,7 @@ export const DATA_SCIENCE_PROJECTS: Project[] = [
   },
   {
     id: 'ds-house-price-valuation',
-    title: 'Real Estate Valuation & Hedonic Price Modeling Engine',
+    title: 'House Price Prediction System',
     category: 'Data Science',
     techStack: ['Python', 'LightGBM', 'GeoPandas', 'Scikit-Learn', 'Streamlit'],
     price: 4099,
@@ -148,7 +148,7 @@ export const DATA_SCIENCE_PROJECTS: Project[] = [
   },
   {
     id: 'ds-air-pollution-forecasting',
-    title: 'Urban Air Quality Index (AQI) Spatio-Temporal Forecasting',
+    title: 'Air Quality & Pollution Predictor',
     category: 'Data Science',
     techStack: ['Python', 'ARIMA', 'XGBoost', 'Folium', 'Pandas'],
     price: 4399,
@@ -166,7 +166,7 @@ export const DATA_SCIENCE_PROJECTS: Project[] = [
   },
   {
     id: 'ds-flight-delay-prediction',
-    title: 'Aviation Flight Delay Risk Prediction with Weather Feature Pipelines',
+    title: 'Flight Delay Prediction System',
     category: 'Data Science',
     techStack: ['Python', 'Scikit-Learn', 'XGBoost', 'Pandas', 'FastAPI'],
     price: 4299,
@@ -184,7 +184,7 @@ export const DATA_SCIENCE_PROJECTS: Project[] = [
   },
   {
     id: 'ds-supply-chain-inventory',
-    title: 'Dynamic Inventory Optimization & Reorder Point Prediction System',
+    title: 'Smart Inventory Demand Predictor',
     category: 'Data Science',
     techStack: ['Python', 'Scikit-Learn', 'Statsmodels', 'Pandas', 'Plotly'],
     price: 4599,

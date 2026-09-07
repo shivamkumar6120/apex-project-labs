@@ -4,7 +4,7 @@ import { Project } from '../models/project.model';
 export const BLOCKCHAIN_PROJECTS: Project[] = [
   {
     id: 'blockchain-credential-verification',
-    title: 'Decentralized Academic Degree Verification on Ethereum',
+    title: 'Certificate Verification System',
     category: 'Blockchain',
     techStack: ['Solidity', 'Hardhat', 'Ethers.js', 'IPFS', 'Angular'],
     price: 5499,
@@ -22,7 +22,7 @@ export const BLOCKCHAIN_PROJECTS: Project[] = [
   },
   {
     id: 'blockchain-voting-system',
-    title: 'CastChain: Tamper-Proof Decentralized E-Voting System',
+    title: 'Online Voting System using Blockchain',
     category: 'Blockchain',
     techStack: ['Solidity', 'Ethereum', 'Hardhat', 'Angular'],
     price: 5199,
@@ -40,7 +40,7 @@ export const BLOCKCHAIN_PROJECTS: Project[] = [
   },
   {
     id: 'blockchain-supply-chain',
-    title: 'OriginTrace: Pharma Supply Chain Provenance & Anti-Counterfeit Ledger',
+    title: 'Supply Chain Tracker',
     category: 'Blockchain',
     techStack: ['Solidity', 'Polygon', 'IPFS', 'Ethers.js'],
     price: 5399,
@@ -58,7 +58,7 @@ export const BLOCKCHAIN_PROJECTS: Project[] = [
   },
   {
     id: 'blockchain-land-registry',
-    title: 'TerraLedger: Decentralized Land Title Registry & Transfer Smart Contracts',
+    title: 'Land Record Management System',
     category: 'Blockchain',
     techStack: ['Solidity', 'Ethereum', 'Web3.js', 'Truffle'],
     price: 5299,
@@ -76,7 +76,7 @@ export const BLOCKCHAIN_PROJECTS: Project[] = [
   },
   {
     id: 'blockchain-ehr-healthcare',
-    title: 'MedLedger: Patient-Centric Electronic Health Records Sharing DApp',
+    title: 'Patient Medical Record Sharing using Blockchain',
     category: 'Blockchain',
     techStack: ['Solidity', 'IPFS', 'MetaMask', 'Angular'],
     price: 5499,
@@ -94,7 +94,7 @@ export const BLOCKCHAIN_PROJECTS: Project[] = [
   },
   {
     id: 'blockchain-crypto-wallet',
-    title: 'VaultPay: Non-Custodial Multi-Currency Web3 Crypto Wallet',
+    title: 'Crypto Wallet App using Blockchain',
     category: 'Blockchain',
     techStack: ['TypeScript', 'Angular', 'Ethers.js', 'BIP-39'],
     price: 4799,
@@ -112,7 +112,7 @@ export const BLOCKCHAIN_PROJECTS: Project[] = [
   },
   {
     id: 'blockchain-crowdfunding-dao',
-    title: 'FundPulse: Decentralized Crowdfunding Platform with Milestone Governance',
+    title: 'Crowdfunding Platform using Blockchain',
     category: 'Blockchain',
     techStack: ['Solidity', 'Hardhat', 'Angular', 'OpenZeppelin'],
     price: 4999,
@@ -130,7 +130,7 @@ export const BLOCKCHAIN_PROJECTS: Project[] = [
   },
   {
     id: 'blockchain-carbon-credit-trading',
-    title: 'EcoLedger: Carbon Offset Tokenization & Marketplace Smart Contracts',
+    title: 'Carbon Credit Trading Marketplace',
     category: 'Blockchain',
     techStack: ['Solidity', 'ERC-20', 'Polygon', 'Web3.js'],
     price: 4899,
@@ -148,7 +148,7 @@ export const BLOCKCHAIN_PROJECTS: Project[] = [
   },
   {
     id: 'blockchain-digital-identity-did',
-    title: 'IdentityKey: Self-Sovereign Identity (SSI) & Verifiable Credentials DApp',
+    title: 'Digital Identity Verification using Blockchain',
     category: 'Blockchain',
     techStack: ['Solidity', 'IPFS', 'Ethereum', 'Angular'],
     price: 5199,
@@ -166,7 +166,7 @@ export const BLOCKCHAIN_PROJECTS: Project[] = [
   },
   {
     id: 'blockchain-microfinance-p2p',
-    title: 'P2PLend: Decentralized Micro-Lending Protocol with Escrow Automation',
+    title: 'Peer-to-Peer Lending System using Blockchain',
     category: 'Blockchain',
     techStack: ['Solidity', 'Chainlink Oracles', 'Hardhat', 'Web3.js'],
     price: 5399,
@@ -184,7 +184,7 @@ export const BLOCKCHAIN_PROJECTS: Project[] = [
   },
   {
     id: 'blockchain-royalty-licensing',
-    title: 'ArtLedger: Digital Asset Copyright & Automated Royalty Distribution',
+    title: 'Digital Copyright & Royalty Tracker',
     category: 'Blockchain',
     techStack: ['Solidity', 'ERC-721', 'IPFS', 'Ethers.js'],
     price: 4699,

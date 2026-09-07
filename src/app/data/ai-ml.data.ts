@@ -4,7 +4,7 @@ import { Project } from '../models/project.model';
 export const AI_ML_PROJECTS: Project[] = [
   {
     id: 'ai-deepfake-detection',
-    title: 'Deepfake Video & Audio Detection System using CNN-LSTM',
+    title: 'Deepfake Video & Audio Detector',
     category: 'AI/ML',
     techStack: ['Python', 'PyTorch', 'OpenCV', 'ResNeXt', 'FastAPI'],
     price: 4999,
@@ -22,7 +22,7 @@ export const AI_ML_PROJECTS: Project[] = [
   },
   {
     id: 'ai-driver-fatigue-monitor',
-    title: 'Driver Fatigue & Distraction Detection with Edge Vision',
+    title: 'Driver Drowsiness & Fatigue Detector',
     category: 'AI/ML',
     techStack: ['Python', 'YOLOv8', 'MediaPipe', 'OpenCV', 'Streamlit'],
     price: 3999,
@@ -40,7 +40,7 @@ export const AI_ML_PROJECTS: Project[] = [
   },
   {
     id: 'ai-fake-news-detection',
-    title: 'Multimodal Fake News Detection using RoBERTa & ViT',
+    title: 'Fake News Detector using AI',
     category: 'AI/ML',
     techStack: ['Python', 'PyTorch', 'HuggingFace', 'RoBERTa', 'FastAPI'],
     price: 4499,
@@ -58,7 +58,7 @@ export const AI_ML_PROJECTS: Project[] = [
   },
   {
     id: 'ai-sentiment-aspect-analysis',
-    title: 'Aspect-Based Sentiment Analyzer for E-Commerce Reviews',
+    title: 'Product Review Sentiment Analyzer',
     category: 'AI/ML',
     techStack: ['Python', 'BERT', 'spaCy', 'Flask', 'NLTK'],
     price: 4199,
@@ -76,7 +76,7 @@ export const AI_ML_PROJECTS: Project[] = [
   },
   {
     id: 'ai-face-recognition-attendance',
-    title: 'Touchless Face Recognition Attendance System with Liveness Detection',
+    title: 'Face Recognition Attendance System',
     category: 'AI/ML',
     techStack: ['Python', 'OpenCV', 'FaceNet', 'SQLite', 'Streamlit'],
     price: 4299,
@@ -94,7 +94,7 @@ export const AI_ML_PROJECTS: Project[] = [
   },
   {
     id: 'ai-medical-diagnostic-chatbot',
-    title: 'Clinical RAG Diagnostic Assistant using LLaMA-3 & LangChain',
+    title: 'AI Medical Diagnosis Chatbot',
     category: 'AI/ML',
     techStack: ['Python', 'LangChain', 'ChromaDB', 'HuggingFace', 'FastAPI'],
     price: 4999,
@@ -112,7 +112,7 @@ export const AI_ML_PROJECTS: Project[] = [
   },
   {
     id: 'ai-movie-recommendation',
-    title: 'Hybrid Collaborative & Content-Based Movie Recommendation Engine',
+    title: 'Movie Recommendation System',
     category: 'AI/ML',
     techStack: ['Python', 'TensorFlow', 'Scikit-Learn', 'Surprise', 'Flask'],
     price: 3999,
@@ -130,7 +130,7 @@ export const AI_ML_PROJECTS: Project[] = [
   },
   {
     id: 'ai-skin-disease-classification',
-    title: 'Dermatological Disease Classifier with Grad-CAM Explainability',
+    title: 'Skin Disease Detection using AI',
     category: 'AI/ML',
     techStack: ['Python', 'PyTorch', 'EfficientNet', 'OpenCV', 'Grad-CAM'],
     price: 4699,
@@ -148,7 +148,7 @@ export const AI_ML_PROJECTS: Project[] = [
   },
   {
     id: 'ai-autonomous-lane-vehicle-detection',
-    title: 'Autonomous Vehicle Obstacle & Lane Boundary Detection System',
+    title: 'Vehicle & Lane Detection for Self-Driving Cars',
     category: 'AI/ML',
     techStack: ['Python', 'YOLOv8', 'OpenCV', 'PyTorch', 'NumPy'],
     price: 4799,
@@ -166,7 +166,7 @@ export const AI_ML_PROJECTS: Project[] = [
   },
   {
     id: 'ai-crop-disease-detection',
-    title: 'AgriVision: Crop Leaf Disease Diagnosis & Treatment Advisor',
+    title: 'Plant & Crop Disease Detector',
     category: 'AI/ML',
     techStack: ['Python', 'TensorFlow', 'ResNet50', 'OpenCV', 'Streamlit'],
     price: 4399,
@@ -184,7 +184,7 @@ export const AI_ML_PROJECTS: Project[] = [
   },
   {
     id: 'ai-voice-biometric-auth',
-    title: 'Speaker Verification & Acoustic Voice Biometric Authentication',
+    title: 'Voice Biometric Authentication System',
     category: 'AI/ML',
     techStack: ['Python', 'PyTorch', 'Librosa', 'GMM', 'FastAPI'],
     price: 4899,

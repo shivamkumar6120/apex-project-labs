@@ -4,8 +4,7 @@ export type ProjectCategory =
   | 'Web Dev'
   | 'App Dev'
   | 'Cybersecurity'
-  | 'Blockchain'
-  | 'IoT/Embedded';
+  | 'Blockchain';
 
 export interface Project {
   id: string;

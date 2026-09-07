@@ -12,7 +12,7 @@
 /tmp
 /temp
 /node_modules
-/dist
+/                                           dist
 /.angular
 /.vscode
 *.log

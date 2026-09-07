@@ -4,7 +4,7 @@ import { Project } from '../models/project.model';
 export const APP_DEV_PROJECTS: Project[] = [
   {
     id: 'app-campus-smart-transit',
-    title: 'OmniRide: Cross-Platform Smart Campus Transit & Bus Tracking',
+    title: 'College Bus Live Tracking App',
     category: 'App Dev',
     techStack: ['Flutter', 'Dart', 'Firebase', 'Google Maps API', 'Node.js'],
     price: 4799,
@@ -22,7 +22,7 @@ export const APP_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'app-expense-tracker-budget',
-    title: 'SpendWise: Personal Finance & Smart Budgeting Mobile App',
+    title: 'Expense Tracker App',
     category: 'App Dev',
     techStack: ['Flutter', 'Dart', 'SQLite', 'Firebase'],
     price: 4199,
@@ -40,7 +40,7 @@ export const APP_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'app-fitness-workout-companion',
-    title: 'FitPulse: Adaptive Workout Tracker & Calorie Counter App',
+    title: 'Fitness Tracker App',
     category: 'App Dev',
     techStack: ['React Native', 'TypeScript', 'Redux', 'Node.js'],
     price: 4399,
@@ -58,7 +58,7 @@ export const APP_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'app-campus-food-ordering',
-    title: 'CampusCraves: University Canteen Pre-Ordering & Queue Buster App',
+    title: 'Campus Canteen Food Ordering App',
     category: 'App Dev',
     techStack: ['Flutter', 'Dart', 'Firebase', 'Razorpay'],
     price: 4499,
@@ -76,7 +76,7 @@ export const APP_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'app-secure-team-chat',
-    title: 'SignalSync: End-to-End Encrypted Real-Time Messaging App',
+    title: 'Encrypted Chat & Messaging App',
     category: 'App Dev',
     techStack: ['Flutter', 'Dart', 'WebSocket', 'Node.js'],
     price: 4699,
@@ -94,7 +94,7 @@ export const APP_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'app-elearning-student-lms',
-    title: 'EduSphere: Mobile Learning LMS with Offline Video & Quiz Modules',
+    title: 'Student E-Learning & Quiz App',
     category: 'App Dev',
     techStack: ['React Native', 'Expo', 'Node.js', 'MongoDB'],
     price: 4599,
@@ -112,7 +112,7 @@ export const APP_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'app-smart-parking-finder',
-    title: 'ParkEasy: Real-Time Urban Parking Slot Reservation App',
+    title: 'Parking Slot Booking App',
     category: 'App Dev',
     techStack: ['Flutter', 'Dart', 'Google Maps API', 'Firebase'],
     price: 4299,
@@ -130,7 +130,7 @@ export const APP_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'app-blood-donor-emergency',
-    title: 'LifeLink: Emergency Blood Donor Finder & Geolocation Alert App',
+    title: 'Emergency Blood Donor Finder App',
     category: 'App Dev',
     techStack: ['Flutter', 'Dart', 'Google Maps API', 'Firebase'],
     price: 3999,
@@ -148,7 +148,7 @@ export const APP_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'app-doctor-appointment-booking',
-    title: 'DocDirect: Mobile Doctor Appointment & Prescription Vault App',
+    title: 'Doctor Appointment Booking App',
     category: 'App Dev',
     techStack: ['React Native', 'TypeScript', 'Express', 'PostgreSQL'],
     price: 4799,
@@ -166,7 +166,7 @@ export const APP_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'app-travel-itinerary-planner',
-    title: 'WanderLog: Collaborative Trip Planner & Offline Maps Companion',
+    title: 'Travel Trip Planner & Expense App',
     category: 'App Dev',
     techStack: ['Flutter', 'Dart', 'Mapbox API', 'Firebase'],
     price: 4299,
@@ -184,7 +184,7 @@ export const APP_DEV_PROJECTS: Project[] = [
   },
   {
     id: 'app-smart-grocery-delivery',
-    title: 'FreshCart: Hyperlocal Grocery Delivery App with Delivery Partner App',
+    title: 'Grocery Delivery App',
     category: 'App Dev',
     techStack: ['React Native', 'Redux Toolkit', 'Node.js', 'MongoDB'],
     price: 4899,

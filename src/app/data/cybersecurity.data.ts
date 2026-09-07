@@ -4,7 +4,7 @@ import { Project } from '../models/project.model';
 export const CYBERSECURITY_PROJECTS: Project[] = [
   {
     id: 'cyber-network-ids-honeypot',
-    title: 'Automated Threat Hunting & Honeypot Intrusion Detection System',
+    title: 'Network Intrusion Detector',
     category: 'Cybersecurity',
     techStack: ['Python', 'Suricata', 'Scapy', 'ELK Stack', 'Flask'],
     price: 5299,
@@ -22,7 +22,7 @@ export const CYBERSECURITY_PROJECTS: Project[] = [
   },
   {
     id: 'cyber-phishing-url-detector',
-    title: 'AntiPhish: AI-Powered Malicious URL & Phishing Web Classifier',
+    title: 'Phishing Website Detector',
     category: 'Cybersecurity',
     techStack: ['Python', 'Scikit-Learn', 'FastAPI', 'Chrome Extension'],
     price: 4299,
@@ -40,7 +40,7 @@ export const CYBERSECURITY_PROJECTS: Project[] = [
   },
   {
     id: 'cyber-network-vulnerability-scanner',
-    title: 'VulnAudit: Automated Port Scanner & Network CVE Vulnerability Assessor',
+    title: 'Network Vulnerability & Port Scanner',
     category: 'Cybersecurity',
     techStack: ['Python', 'Nmap', 'Scapy', 'SQLite', 'Flask'],
     price: 4699,
@@ -58,7 +58,7 @@ export const CYBERSECURITY_PROJECTS: Project[] = [
   },
   {
     id: 'cyber-file-encryption-vault',
-    title: 'CryptaLock: Zero-Knowledge Hybrid RSA-AES File Encryption Suite',
+    title: 'File Encryption Tool',
     category: 'Cybersecurity',
     techStack: ['Python', 'Cryptography', 'AES-GCM', 'PyQt5'],
     price: 3999,
@@ -76,7 +76,7 @@ export const CYBERSECURITY_PROJECTS: Project[] = [
   },
   {
     id: 'cyber-ransomware-sandbox-analyzer',
-    title: 'RansomGuard: Dynamic Behavioral Ransomware Analyzer & Canary Defense',
+    title: 'Ransomware Detection & Defense Tool',
     category: 'Cybersecurity',
     techStack: ['Python', 'YARA', 'Cuckoo Sandbox API', 'Volatility'],
     price: 5499,
@@ -94,7 +94,7 @@ export const CYBERSECURITY_PROJECTS: Project[] = [
   },
   {
     id: 'cyber-wifi-deauth-detector',
-    title: 'AirSentinel: Rogue Access Point & Wi-Fi Deauthentication Detector',
+    title: 'Fake Wi-Fi & Rogue Hotspot Detector',
     category: 'Cybersecurity',
     techStack: ['Python', 'Scapy', 'Aircrack-ng', 'Linux Raw Sockets'],
     price: 4499,
@@ -112,7 +112,7 @@ export const CYBERSECURITY_PROJECTS: Project[] = [
   },
   {
     id: 'cyber-sql-injection-waf',
-    title: 'ShieldWAF: Machine Learning Web Application Firewall for SQLi & XSS',
+    title: 'SQL Injection & Web Attack Blocker',
     category: 'Cybersecurity',
     techStack: ['Python', 'FastAPI', 'Regex', 'Scikit-Learn'],
     price: 4899,
@@ -130,7 +130,7 @@ export const CYBERSECURITY_PROJECTS: Project[] = [
   },
   {
     id: 'cyber-steganography-tool',
-    title: 'StegoSecure: LSB Image Steganography & Forensic Steganalysis Tool',
+    title: 'Image Steganography & Secret Message Tool',
     category: 'Cybersecurity',
     techStack: ['Python', 'OpenCV', 'NumPy', 'Tkinter'],
     price: 3899,
@@ -148,7 +148,7 @@ export const CYBERSECURITY_PROJECTS: Project[] = [
   },
   {
     id: 'cyber-siem-log-analyzer',
-    title: 'LogSentry: Lightweight SIEM & Anomaly Detection Log Engine',
+    title: 'Security Log Anomaly Detector',
     category: 'Cybersecurity',
     techStack: ['Python', 'Elasticsearch', 'Docker', 'Streamlit'],
     price: 4999,
@@ -166,7 +166,7 @@ export const CYBERSECURITY_PROJECTS: Project[] = [
   },
   {
     id: 'cyber-password-vault-audit',
-    title: 'KeyBastion: Zero-Knowledge Password Vault with Breach Auditor',
+    title: 'Password Strength Checker & Secure Vault',
     category: 'Cybersecurity',
     techStack: ['TypeScript', 'Angular', 'WebCrypto API', 'Node.js'],
     price: 4399,
@@ -184,7 +184,7 @@ export const CYBERSECURITY_PROJECTS: Project[] = [
   },
   {
     id: 'cyber-dns-tunneling-detector',
-    title: 'DNSShield: Covert DNS Tunneling & Exfiltration Detection Engine',
+    title: 'DNS Data Leakage & Tunneling Detector',
     category: 'Cybersecurity',
     techStack: ['Python', 'Scapy', 'LightGBM', 'Wireshark PCAP'],
     price: 4799,
