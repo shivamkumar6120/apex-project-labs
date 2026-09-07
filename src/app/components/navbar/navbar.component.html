@@ -1,0 +1,118 @@
+<header 
+  class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-shadow duration-300"
+  [class.shadow-sm]="isScrolled">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+      
+      <!-- Brand Logo -->
+      <a routerLink="/" class="flex items-center gap-3 group" (click)="closeMobileMenu()">
+        <div class="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20 group-hover:bg-blue-700 transition-colors">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 22 22 22"></polygon>
+            <polygon points="12 8 6 18 18 18" fill="white" fill-opacity="0.3"></polygon>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-lg font-bold text-slate-900 tracking-tight leading-tight">
+            Apex Project <span class="text-blue-600">Labs</span>
+          </span>
+          <span class="text-[11px] font-semibold text-slate-500 tracking-wider uppercase">
+            Engineering Projects
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a 
+          routerLink="/" 
+          routerLinkActive="text-blue-600 font-semibold" 
+          [routerLinkActiveOptions]="{ exact: true }" 
+          class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
+          Home
+        </a>
+        <button 
+          type="button" 
+          (click)="navigateToProjects()" 
+          class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors cursor-pointer">
+          Projects
+        </button>
+        <button 
+          type="button" 
+          (click)="navigateToContact()" 
+          class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors cursor-pointer">
+          Contact
+        </button>
+      </nav>
+
+      <!-- Desktop Action CTA -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a 
+          [href]="whatsappUrl" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold px-4 py-2.5 rounded-lg shadow-sm hover:shadow transition-all duration-200">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 2C6.518 2 2.03 6.475 2.03 11.979c0 1.954.566 3.864 1.637 5.512L2 22.081l4.757-1.579a9.923 9.923 0 005.274 1.492h.005c5.512 0 9.999-4.475 9.999-9.98 0-2.668-1.043-5.176-2.935-7.065C17.202 3.06 14.697 2 12.031 2zm5.792 14.153c-.244.686-1.42 1.309-1.961 1.353-.515.042-1.189.06-3.832-.988-3.235-1.284-5.326-4.577-5.487-4.792-.16-.214-1.31-1.745-1.31-3.329 0-1.584.829-2.362 1.123-2.684.294-.321.642-.401.856-.401.214 0 .428.002.615.011.198.009.462-.075.723.551.268.642.91 2.222.989 2.383.08.16.134.348.027.562-.107.214-.16.348-.321.535-.16.188-.337.419-.481.562-.16.16-.328.334-.141.655.187.321.83 1.369 1.78 2.215 1.222 1.088 2.253 1.425 2.574 1.585.321.16.508.134.695-.08.187-.214.802-.936 1.016-1.257.214-.321.428-.268.722-.16.294.107 1.866.882 2.188 1.042.321.16.535.241.615.375.08.134.08.775-.164 1.461z"/>
+          </svg>
+          <span>WhatsApp Us</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex items-center md:hidden">
+        <button 
+          type="button" 
+          (click)="toggleMobileMenu()" 
+          class="p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+          aria-label="Toggle Navigation Menu">
+          @if (!isMobileMenuOpen) {
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          } @else {
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          }
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer Menu -->
+  @if (isMobileMenuOpen) {
+    <div class="md:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-5 space-y-2 animate-fadeIn">
+      <a 
+        routerLink="/" 
+        (click)="closeMobileMenu()" 
+        class="block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-100 transition-colors">
+        Home
+      </a>
+      <button 
+        type="button" 
+        (click)="navigateToProjects()" 
+        class="w-full text-left block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-100 transition-colors">
+        Projects
+      </button>
+      <button 
+        type="button" 
+        (click)="navigateToContact()" 
+        class="w-full text-left block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-100 transition-colors">
+        Contact
+      </button>
+      <div class="pt-2">
+        <a 
+          [href]="whatsappUrl" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-2.5 rounded-lg shadow-sm transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 2C6.518 2 2.03 6.475 2.03 11.979c0 1.954.566 3.864 1.637 5.512L2 22.081l4.757-1.579a9.923 9.923 0 005.274 1.492h.005c5.512 0 9.999-4.475 9.999-9.98 0-2.668-1.043-5.176-2.935-7.065C17.202 3.06 14.697 2 12.031 2zm5.792 14.153c-.244.686-1.42 1.309-1.961 1.353-.515.042-1.189.06-3.832-.988-3.235-1.284-5.326-4.577-5.487-4.792-.16-.214-1.31-1.745-1.31-3.329 0-1.584.829-2.362 1.123-2.684.294-.321.642-.401.856-.401.214 0 .428.002.615.011.198.009.462-.075.723.551.268.642.91 2.222.989 2.383.08.16.134.348.027.562-.107.214-.16.348-.321.535-.16.188-.337.419-.481.562-.16.16-.328.334-.141.655.187.321.83 1.369 1.78 2.215 1.222 1.088 2.253 1.425 2.574 1.585.321.16.508.134.695-.08.187-.214.802-.936 1.016-1.257.214-.321.428-.268.722-.16.294.107 1.866.882 2.188 1.042.321.16.535.241.615.375.08.134.08.775-.164 1.461z"/>
+          </svg>
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  }
+</header>

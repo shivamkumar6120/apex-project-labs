@@ -1,0 +1,110 @@
+# ==============================================================================
+# Enterprise Git Ignore Rules - Apex Project Labs (Angular + TypeScript + Tailwind)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Compiled Output & Build Artifacts
+# ------------------------------------------------------------------------------
+/dist
+/build
+/out-tsc
+/bazel-out
+/tmp
+/temp
+
+# ------------------------------------------------------------------------------
+# Dependencies & Package Managers
+# ------------------------------------------------------------------------------
+/node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ------------------------------------------------------------------------------
+# Angular & Build Engine Cache
+# ------------------------------------------------------------------------------
+/.angular
+/.angular/cache
+.sass-cache/
+.eslintcache
+.stylelintcache
+
+# ------------------------------------------------------------------------------
+# Testing, Coverage & Quality Assurance
+# ------------------------------------------------------------------------------
+/coverage
+/.nyc_output
+testem.log
+/typings
+__screenshots__/
+/test-results
+/playwright-report
+/blob-report
+/cypress/videos
+/cypress/screenshots
+/libpeerconnection.log
+/connect.lock
+
+# ------------------------------------------------------------------------------
+# Environment Variables & Secrets (Prevent accidental leaks)
+# ------------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+
+# ------------------------------------------------------------------------------
+# IDEs, Text Editors & Workspaces
+# ------------------------------------------------------------------------------
+# JetBrains (WebStorm, IntelliJ IDEA)
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/mcp.json
+
+# Eclipse, Sublime, NetBeans, Vim
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.sublime-project
+*.swp
+*.swo
+*~
+.history/*
+
+# ------------------------------------------------------------------------------
+# Operating System Files
+# ------------------------------------------------------------------------------
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory

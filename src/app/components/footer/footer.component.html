@@ -1,0 +1,108 @@
+<footer id="contact" class="bg-white border-t border-slate-200 text-slate-600 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+      
+      <!-- Brand & Mission Column -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-sm">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 22 22 22"></polygon>
+              <polygon points="12 8 6 18 18 18" fill="white" fill-opacity="0.3"></polygon>
+            </svg>
+          </div>
+          <span class="text-lg font-bold text-slate-900 tracking-tight">
+            Apex Project <span class="text-blue-600">Labs</span>
+          </span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-500 leading-relaxed">
+          Premium pre-built final year engineering projects for CSE, IT, and coding-focused Electronics students. Complete with tested codebases, IEEE reports, presentations, and viva preparation.
+        </p>
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold">
+          <span>🛡️</span>
+          <span>100% Submission Guarantee</span>
+        </div>
+      </div>
+
+      <!-- Categories Column -->
+      <div>
+        <h4 class="text-sm font-bold text-slate-900 tracking-tight uppercase mb-4">Project Disciplines</h4>
+        <ul class="space-y-2 text-xs sm:text-sm">
+          @for (cat of categories; track cat) {
+            <li>
+              <a routerLink="/" class="text-slate-600 hover:text-blue-600 transition-colors">
+                {{ cat }} Projects
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+
+      <!-- Deliverables Package Column -->
+      <div>
+        <h4 class="text-sm font-bold text-slate-900 tracking-tight uppercase mb-4">Included in Package</h4>
+        <ul class="space-y-2 text-xs sm:text-sm text-slate-600">
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-600 font-bold">✓</span>
+            <span>Clean, Well-Documented Source Code</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-600 font-bold">✓</span>
+            <span>Complete IEEE Format Project Report</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-600 font-bold">✓</span>
+            <span>Presentation Slides (PPT + Notes)</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-600 font-bold">✓</span>
+            <span>Demo Video & Top 25 Viva Q&A</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-emerald-600 font-bold">✓</span>
+            <span>1-on-1 Remote Setup Help</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Direct Contact Desk Column -->
+      <div>
+        <h4 class="text-sm font-bold text-slate-900 tracking-tight uppercase mb-4">Direct WhatsApp Desk</h4>
+        <p class="text-xs text-slate-500 mb-3 leading-relaxed">
+          Need custom requirements or immediate file access? Message our technical team directly:
+        </p>
+
+        <a 
+          [href]="whatsappSupportUrl" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="flex items-center gap-3 p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 hover:bg-emerald-100/70 transition-colors group">
+          <div class="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center shadow-xs">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 2C6.518 2 2.03 6.475 2.03 11.979c0 1.954.566 3.864 1.637 5.512L2 22.081l4.757-1.579a9.923 9.923 0 005.274 1.492h.005c5.512 0 9.999-4.475 9.999-9.98 0-2.668-1.043-5.176-2.935-7.065C17.202 3.06 14.697 2 12.031 2zm5.792 14.153c-.244.686-1.42 1.309-1.961 1.353-.515.042-1.189.06-3.832-.988-3.235-1.284-5.326-4.577-5.487-4.792-.16-.214-1.31-1.745-1.31-3.329 0-1.584.829-2.362 1.123-2.684.294-.321.642-.401.856-.401.214 0 .428.002.615.011.198.009.462-.075.723.551.268.642.91 2.222.989 2.383.08.16.134.348.027.562-.107.214-.16.348-.321.535-.16.188-.337.419-.481.562-.16.16-.328.334-.141.655.187.321.83 1.369 1.78 2.215 1.222 1.088 2.253 1.425 2.574 1.585.321.16.508.134.695-.08.187-.214.802-.936 1.016-1.257.214-.321.428-.268.722-.16.294.107 1.866.882 2.188 1.042.321.16.535.241.615.375.08.134.08.775-.164 1.461z"/>
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-[11px] font-bold text-emerald-700 uppercase tracking-wider">Chat on WhatsApp</span>
+            <span class="text-sm font-bold text-slate-900 font-mono">{{ displayPhone }}</span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright & Badges -->
+    <div class="pt-8 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>© {{ currentYear }} Apex Project Labs. Engineered for college students. All rights reserved.</p>
+      <div class="flex items-center gap-3 text-slate-400">
+        <span>AI / ML</span>
+        <span>•</span>
+        <span>Data Science</span>
+        <span>•</span>
+        <span>Web & App</span>
+        <span>•</span>
+        <span>IoT & Embedded</span>
+      </div>
+    </div>
+  </div>
+</footer>
