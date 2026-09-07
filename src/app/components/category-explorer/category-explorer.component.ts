@@ -88,6 +88,16 @@ export class CategoryExplorerComponent implements OnInit {
         icon: '⛓️',
         badgeBg: 'bg-cyan-50 border-cyan-200/80 text-cyan-700',
         projectCount: countFor('Blockchain')
+      },
+      {
+        name: 'MBA/BBA',
+        slug: 'mba-bba',
+        title: 'MBA / BBA Research',
+        description: 'Marketing, finance, HR, operations, and strategy research reports with PPT and viva notes.',
+        icon: '💼',
+        badgeBg: 'bg-violet-50 border-violet-200/80 text-violet-700',
+        statusTag: 'New',
+        projectCount: countFor('MBA/BBA')
       }
     ];
   }

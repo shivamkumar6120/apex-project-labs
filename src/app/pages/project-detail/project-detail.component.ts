@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProjectService } from '../../services/project.service';
-import { Project, WHATSAPP_DISPLAY_PHONE, WHATSAPP_PHONE, getProjectWhatsAppUrl, getCustomProjectWhatsAppUrl } from '../../models/project.model';
+import { Project, WHATSAPP_DISPLAY_PHONE, WHATSAPP_PHONE, getProjectTags, getProjectWhatsAppUrl, getCustomProjectWhatsAppUrl, isResearchProject } from '../../models/project.model';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
 
 @Component({
@@ -43,6 +43,14 @@ export class ProjectDetailComponent implements OnInit {
   get whatsAppUrl(): string {
     if (!this.project) return '';
     return getProjectWhatsAppUrl(this.project.title);
+  }
+
+  get isResearch(): boolean {
+    return this.project ? isResearchProject(this.project) : false;
+  }
+
+  get tags(): string[] {
+    return this.project ? getProjectTags(this.project) : [];
   }
 
   getCategoryBadgeClass(_category?: string): string {

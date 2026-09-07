@@ -6,8 +6,10 @@ import { ProjectCardComponent } from '../project-card/project-card.component';
 import { ProjectService } from '../../services/project.service';
 import { 
   Project, 
+  getProjectTags as resolveProjectTags, 
   getProjectWhatsAppUrl, 
-  getCatalogCustomProjectWhatsAppUrl 
+  getCatalogCustomProjectWhatsAppUrl,
+  isResearchProject as isResearchType
 } from '../../models/project.model';
 
 export interface CategoryTile {
@@ -109,7 +111,7 @@ export class ProjectCatalogComponent implements OnInit, OnChanges {
       return `${this.selectedCategory} Projects (${this.formatProjectCount(this.displayedProjects.length)} Projects)`;
     }
     if (this.isAllCategories) {
-      return `All Engineering Projects (${this.formatProjectCount(this.displayedProjects.length)} Projects)`;
+      return `All Projects (${this.formatProjectCount(this.displayedProjects.length)} Projects)`;
     }
     return 'Featured Projects';
   }
@@ -119,10 +121,13 @@ export class ProjectCatalogComponent implements OnInit, OnChanges {
       return `Found ${this.displayedProjects.length} result${this.displayedProjects.length === 1 ? '' : 's'} matching "${this.searchQuery.trim()}".`;
     }
     if (this.isCategoryFiltered) {
+      if (this.selectedCategory === 'MBA/BBA') {
+        return 'Full catalog of MBA/BBA research projects with complete reports, survey data, presentations, and viva notes.';
+      }
       return `Full catalog of industry-grade ${this.selectedCategory} projects with verified source code, architecture reports, and setup support.`;
     }
     if (this.isAllCategories) {
-      return 'Complete catalog across all engineering domains with verified source code, architecture reports, and setup support.';
+      return 'Complete catalog across engineering and MBA/BBA research projects, with the right deliverables for each type.';
     }
     return 'A curated showcase featuring 1 signature project from each engineering domain. Select any category above to browse the complete catalog.';
   }
@@ -253,6 +258,18 @@ export class ProjectCatalogComponent implements OnInit, OnChanges {
     this.scrollToResultsTop();
   }
 
+  getProjectTags(project: Project): string[] {
+    return resolveProjectTags(project);
+  }
+
+  isResearchProject(project: Project): boolean {
+    return isResearchType(project);
+  }
+
+  get listTagsColumnLabel(): string {
+    return this.selectedCategory === 'MBA/BBA' ? 'Research Areas' : 'Technologies';
+  }
+
   getProjectWhatsAppUrl(title: string): string {
     return getProjectWhatsAppUrl(title);
   }
@@ -312,6 +329,15 @@ export class ProjectCatalogComponent implements OnInit, OnChanges {
         icon: '⛓️',
         badgeBg: 'bg-cyan-50 border-cyan-200/80 text-cyan-700',
         projectCount: this.getCategoryCount('Blockchain')
+      },
+      {
+        name: 'MBA/BBA',
+        title: 'MBA / BBA Research',
+        description: 'Marketing, finance, HR, operations, and strategy research reports with PPT and viva notes.',
+        icon: '💼',
+        badgeBg: 'bg-violet-50 border-violet-200/80 text-violet-700',
+        statusTag: 'New',
+        projectCount: this.getCategoryCount('MBA/BBA')
       }
     ];
   }
@@ -325,7 +351,7 @@ export class ProjectCatalogComponent implements OnInit, OnChanges {
           p.title.toLowerCase().includes(q) ||
           p.shortDescription.toLowerCase().includes(q) ||
           p.category.toLowerCase().includes(q) ||
-          p.techStack.some((t) => t.toLowerCase().includes(q))
+          resolveProjectTags(p).some((t) => t.toLowerCase().includes(q))
       );
 
       if (this.isCategoryFiltered) {

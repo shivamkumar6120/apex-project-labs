@@ -20,7 +20,11 @@
         {{ pageTitle }}
       </h1>
       <p class="text-sm sm:text-base text-slate-600 mt-1.5 max-w-2xl leading-relaxed">
-        Browse our complete catalog of ready-made engineering projects with verified source code, IEEE reports, and 1-on-1 setup support.
+        @if (initialCategory === 'MBA/BBA') {
+          Browse MBA/BBA research projects with complete reports, survey/questionnaire data, presentations, and viva preparation notes.
+        } @else {
+          Browse our complete catalog of ready-made engineering projects with verified source code, IEEE reports, and 1-on-1 setup support.
+        }
       </p>
     </div>
 

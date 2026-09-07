@@ -51,7 +51,7 @@
                   <svg class="w-3.5 h-3.5 text-blue-600" viewBox="0 0 16 16" fill="currentColor">
                     <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
                   </svg>
-                  Production-Ready Build
+                  {{ isResearch ? 'Verified Research Study' : 'Production-Ready Build' }}
                 </span>
               </div>
             </div>
@@ -65,29 +65,35 @@
                 {{ project.shortDescription }}
               </p>
 
-              <!-- Technologies Section -->
+              <!-- Technologies / Research Areas Section -->
               <div>
-                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2.5">Technologies & Architecture</h3>
+                <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2.5">
+                  {{ isResearch ? 'Research Areas' : 'Technologies & Architecture' }}
+                </h3>
                 <div class="flex flex-wrap gap-2">
-                  @for (tech of project.techStack; track tech) {
+                  @for (tag of tags; track tag) {
                     <span class="text-xs font-mono font-semibold bg-slate-100 text-slate-800 border border-slate-200 px-3 py-1 rounded-lg">
-                      {{ tech }}
+                      {{ tag }}
                     </span>
                   }
                 </div>
               </div>
 
-              <!-- Portfolio / Industry Skill Impact Highlight -->
+              <!-- Portfolio / Skill Impact Highlight -->
               <div class="mt-6 p-4 rounded-xl bg-blue-50/70 border border-blue-200/90 flex items-start gap-3.5">
                 <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center flex-shrink-0 mt-0.5 text-sm font-semibold shadow-xs">
                   💼
                 </div>
                 <div class="space-y-0.5">
                   <h4 class="text-xs sm:text-sm font-bold text-slate-900">
-                    Great for Your Resume & Interviews
+                    {{ isResearch ? 'Great for Your Viva & Internship Interviews' : 'Great for Your Resume & Interviews' }}
                   </h4>
                   <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                    Built with <strong class="font-semibold text-blue-700">{{ project.techStack.join(', ') }}</strong> — practical tools you can talk about confidently in interviews to show real, hands-on experience.
+                    @if (isResearch) {
+                      Built around <strong class="font-semibold text-blue-700">{{ tags.join(', ') }}</strong> — methods and findings you can explain clearly in a viva, internship, or management interview.
+                    } @else {
+                      Built with <strong class="font-semibold text-blue-700">{{ tags.join(', ') }}</strong> — practical tools you can talk about confidently in interviews to show real, hands-on experience.
+                    }
                   </p>
                 </div>
               </div>
@@ -106,7 +112,9 @@
 
             @if (project.features && project.features.length > 0) {
               <div class="mt-6 pt-6 border-t border-slate-100">
-                <h3 class="text-sm font-bold text-slate-900 mb-3">Core Modules & Key Features</h3>
+                <h3 class="text-sm font-bold text-slate-900 mb-3">
+                  {{ isResearch ? 'Study Coverage & Key Outcomes' : 'Core Modules & Key Features' }}
+                </h3>
                 <ul class="space-y-2.5">
                   @for (feature of project.features; track feature) {
                     <li class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600">
@@ -122,45 +130,85 @@
           <!-- Deliverables Package Breakdown (ONLY 4 Items) -->
           <div class="bg-white rounded-xl border border-slate-200/90 shadow-xs p-6 sm:p-8">
             <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2 mb-2">
-              <span>📦</span> Complete Engineering Deliverables Kit
+              <span>📦</span> {{ isResearch ? 'Complete Research Deliverables Kit' : 'Complete Engineering Deliverables Kit' }}
             </h2>
             <p class="text-xs sm:text-sm text-slate-500 mb-6 leading-relaxed">
-              Complete production assets and architectural documentation designed for immediate local deployment and technical reviews:
+              @if (isResearch) {
+                Complete research pack designed for MBA/BBA submissions, faculty review, and viva — report, data, slides, and talking notes:
+              } @else {
+                Complete production assets and architectural documentation designed for immediate local deployment and technical reviews:
+              }
             </p>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
-                <div class="text-2xl mb-2">💻</div>
-                <h4 class="font-bold text-sm text-slate-900 mb-1">1. Source Code</h4>
-                <p class="text-xs text-slate-600 leading-relaxed">
-                  Clean, modular, and thoroughly commented codebase with setup guide, dependency configurations, and launch scripts.
-                </p>
-              </div>
+            @if (isResearch) {
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div class="text-2xl mb-2">📑</div>
+                  <h4 class="font-bold text-sm text-slate-900 mb-1">1. Complete Research Report</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Structured MBA/BBA report covering objectives, literature review, methodology, findings, and recommendations ready for college submission.
+                  </p>
+                </div>
 
-              <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
-                <div class="text-2xl mb-2">📑</div>
-                <h4 class="font-bold text-sm text-slate-900 mb-1">2. Technical Report & Specs</h4>
-                <p class="text-xs text-slate-600 leading-relaxed">
-                  Comprehensive 40+ page technical architecture documentation covering system specifications, UML diagrams, test suites, and implementation benchmarks.
-                </p>
-              </div>
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div class="text-2xl mb-2">📋</div>
+                  <h4 class="font-bold text-sm text-slate-900 mb-1">2. Survey/Questionnaire Data</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Questionnaire, sample responses, and data tables so you can explain how the study was designed and what the numbers show.
+                  </p>
+                </div>
 
-              <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
-                <div class="text-2xl mb-2">⚡</div>
-                <h4 class="font-bold text-sm text-slate-900 mb-1">3. Quick Setup Help</h4>
-                <p class="text-xs text-slate-600 leading-relaxed">
-                  Instant WhatsApp connect with setup and installation help included, so you can get the project running quickly after purchase.
-                </p>
-              </div>
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div class="text-2xl mb-2">🖥️</div>
+                  <h4 class="font-bold text-sm text-slate-900 mb-1">3. Presentation (PPT)</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Viva-ready slides summarizing the problem, method, key findings, and managerial implications.
+                  </p>
+                </div>
 
-              <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
-                <div class="text-2xl mb-2">🔍</div>
-                <h4 class="font-bold text-sm text-slate-900 mb-1">4. Architecture Detailing</h4>
-                <p class="text-xs text-slate-600 leading-relaxed">
-                  In-depth walkthrough of system design, module workflows, API contracts, and algorithmic logic.
-                </p>
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div class="text-2xl mb-2">🎯</div>
+                  <h4 class="font-bold text-sm text-slate-900 mb-1">4. Viva Preparation Notes</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Likely faculty questions, short answers, and talking points on sampling, tools, and limitations.
+                  </p>
+                </div>
               </div>
-            </div>
+            } @else {
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div class="text-2xl mb-2">💻</div>
+                  <h4 class="font-bold text-sm text-slate-900 mb-1">1. Source Code</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Clean, modular, and thoroughly commented codebase with setup guide, dependency configurations, and launch scripts.
+                  </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div class="text-2xl mb-2">📑</div>
+                  <h4 class="font-bold text-sm text-slate-900 mb-1">2. Technical Report & Specs</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Comprehensive 40+ page technical architecture documentation covering system specifications, UML diagrams, test suites, and implementation benchmarks.
+                  </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div class="text-2xl mb-2">⚡</div>
+                  <h4 class="font-bold text-sm text-slate-900 mb-1">3. Quick Setup Help</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Instant WhatsApp connect with setup and installation help included, so you can get the project running quickly after purchase.
+                  </p>
+                </div>
+
+                <div class="p-5 rounded-xl bg-slate-50 border border-slate-200/80 shadow-2xs">
+                  <div class="text-2xl mb-2">🔍</div>
+                  <h4 class="font-bold text-sm text-slate-900 mb-1">4. Architecture Detailing</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    In-depth walkthrough of system design, module workflows, API contracts, and algorithmic logic.
+                  </p>
+                </div>
+              </div>
+            }
           </div>
 
           <!-- "Need a Custom Project?" Callout Section -->
@@ -198,7 +246,7 @@
             <!-- Pricing Header -->
             <div class="text-center pb-5 border-b border-slate-100 mb-5">
               <span class="block text-xs font-bold uppercase text-slate-400 tracking-wider mb-1">
-                Complete Engineering Kit
+                {{ isResearch ? 'Complete Research Kit' : 'Complete Engineering Kit' }}
               </span>
               <div class="flex items-baseline justify-center gap-1">
                 <span class="text-2xl font-extrabold text-blue-600">₹</span>
@@ -206,7 +254,7 @@
                 <span class="text-xs text-slate-400 font-medium">all-inclusive</span>
               </div>
               <div class="mt-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-200/90">
-                <span>⚡ Instant Setup Support Included</span>
+                <span>{{ isResearch ? '⚡ Viva & Submission Support Included' : '⚡ Instant Setup Support Included' }}</span>
               </div>
             </div>
 
@@ -232,27 +280,46 @@
 
             <!-- Inclusions Checklist (ONLY 4 Core Items) -->
             <div class="space-y-2.5 pt-4 border-t border-slate-100 text-xs text-slate-600">
-              <div class="flex items-center gap-2">
-                <span class="text-blue-600 font-bold">✓</span>
-                <span>Complete Source Code</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="text-blue-600 font-bold">✓</span>
-                <span>Full Technical Report & Specs</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="text-blue-600 font-bold">✓</span>
-                <span>Quick Setup & Installation Help</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="text-blue-600 font-bold">✓</span>
-                <span>Architecture & Logic Detailing</span>
-              </div>
+              @if (isResearch) {
+                <div class="flex items-center gap-2">
+                  <span class="text-blue-600 font-bold">✓</span>
+                  <span>Complete Research Report</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-blue-600 font-bold">✓</span>
+                  <span>Survey/Questionnaire Data</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-blue-600 font-bold">✓</span>
+                  <span>Presentation (PPT)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-blue-600 font-bold">✓</span>
+                  <span>Viva Preparation Notes</span>
+                </div>
+              } @else {
+                <div class="flex items-center gap-2">
+                  <span class="text-blue-600 font-bold">✓</span>
+                  <span>Complete Source Code</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-blue-600 font-bold">✓</span>
+                  <span>Full Technical Report & Specs</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-blue-600 font-bold">✓</span>
+                  <span>Quick Setup & Installation Help</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-blue-600 font-bold">✓</span>
+                  <span>Architecture & Logic Detailing</span>
+                </div>
+              }
             </div>
 
             <!-- Contact Hotline -->
             <div class="mt-5 pt-4 border-t border-slate-100 text-center">
-              <span class="block text-[11px] font-bold uppercase text-slate-400">Technical Advisor Desk</span>
+              <span class="block text-[11px] font-bold uppercase text-slate-400">{{ isResearch ? 'Research Advisor Desk' : 'Technical Advisor Desk' }}</span>
               <span class="text-sm font-bold text-slate-900 font-mono">{{ displayPhone }}</span>
             </div>
 

@@ -19,7 +19,7 @@
 
     <!-- Verified Badge -->
     <span class="absolute top-3 right-3 px-2 py-0.5 text-[11px] font-medium rounded-md bg-white/95 text-slate-700 border border-slate-200 shadow-xs backdrop-blur-xs">
-      Verified Build
+      {{ isResearch ? 'Verified Study' : 'Verified Build' }}
     </span>
   </div>
 
@@ -38,16 +38,16 @@
       {{ project.shortDescription }}
     </p>
 
-    <!-- Tech Stack Tags -->
+    <!-- Tech Stack / Research Areas Tags -->
     <div class="flex flex-wrap gap-1.5 mb-5">
-      @for (tech of project.techStack.slice(0, 4); track tech) {
+      @for (tag of tags.slice(0, 4); track tag) {
         <span class="text-[11px] font-medium font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">
-          {{ tech }}
+          {{ tag }}
         </span>
       }
-      @if (project.techStack.length > 4) {
+      @if (tags.length > 4) {
         <span class="text-[11px] font-medium font-mono bg-blue-50 text-blue-700 px-2 py-0.5 rounded border border-blue-200">
-          +{{ project.techStack.length - 4 }}
+          +{{ tags.length - 4 }}
         </span>
       }
     </div>

@@ -10,7 +10,8 @@ const CATEGORY_SLUG_MAP: Record<string, string> = {
   'web-dev': 'Web Dev',
   'app-dev': 'App Dev',
   'cybersecurity': 'Cybersecurity',
-  'blockchain': 'Blockchain'
+  'blockchain': 'Blockchain',
+  'mba-bba': 'MBA/BBA'
 };
 
 @Component({

@@ -10,7 +10,8 @@ const CATEGORY_TO_SLUG: Record<string, string> = {
   'Web Dev': 'web-dev',
   'App Dev': 'app-dev',
   'Cybersecurity': 'cybersecurity',
-  'Blockchain': 'blockchain'
+  'Blockchain': 'blockchain',
+  'MBA/BBA': 'mba-bba'
 };
 
 @Component({

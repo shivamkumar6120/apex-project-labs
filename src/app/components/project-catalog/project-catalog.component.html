@@ -82,7 +82,7 @@
               id="projectSearch"
               [(ngModel)]="searchQuery" 
               (ngModelChange)="onSearchChange()"
-              placeholder="Search Python, Spring Boot, Solidity..." 
+              placeholder="Search Python, SPSS, Marketing, Solidity..." 
               class="w-full bg-slate-50 hover:bg-slate-100/70 focus:bg-white text-slate-800 text-sm font-medium rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 py-2.5 pl-9 pr-8 outline-none transition-all" />
             @if (searchQuery) {
               <button 
@@ -245,7 +245,11 @@
 
               <!-- Helper footer -->
               <div class="mt-5 pt-3.5 border-t border-slate-100 text-[11px] text-slate-400 leading-relaxed">
-                All projects include complete source code, 40+ page IEEE report &amp; 1-on-1 WhatsApp setup help.
+                @if (selectedCategory === 'MBA/BBA') {
+                  MBA/BBA kits include a complete research report, survey/questionnaire data, PPT, and viva notes.
+                } @else {
+                  All projects include complete source code, 40+ page IEEE report &amp; 1-on-1 WhatsApp setup help.
+                }
               </div>
 
             </div>
@@ -281,7 +285,7 @@
             <!-- Table Header Row (Desktop) -->
             <div class="hidden md:grid grid-cols-12 gap-4 px-6 py-3 bg-slate-50/80 border-b border-slate-200 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
               <div class="col-span-5">Project Details</div>
-              <div class="col-span-3">Technologies</div>
+              <div class="col-span-3">{{ listTagsColumnLabel }}</div>
               <div class="col-span-2 text-right">Price</div>
               <div class="col-span-2 text-right">Action</div>
             </div>
@@ -300,7 +304,7 @@
                         {{ project.category }}
                       </span>
                       <span class="text-[11px] font-medium text-slate-500 bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200/80">
-                        Verified Build
+                        {{ isResearchProject(project) ? 'Verified Study' : 'Verified Build' }}
                       </span>
                     </div>
 
@@ -315,16 +319,16 @@
                     </p>
                   </div>
 
-                  <!-- Col 2: Tech Stack (md:col-span-3) -->
+                  <!-- Col 2: Tech Stack / Research Areas (md:col-span-3) -->
                   <div class="md:col-span-3 hidden md:flex flex-wrap gap-1.5">
-                    @for (tech of project.techStack.slice(0, 3); track tech) {
+                    @for (tag of getProjectTags(project).slice(0, 3); track tag) {
                       <span class="text-[11px] text-slate-600 font-mono bg-slate-100 px-2 py-0.5 rounded border border-slate-200">
-                        {{ tech }}
+                        {{ tag }}
                       </span>
                     }
-                    @if (project.techStack.length > 3) {
+                    @if (getProjectTags(project).length > 3) {
                       <span class="text-[10px] text-blue-700 font-mono font-medium bg-blue-50 px-1.5 py-0.5 rounded border border-blue-200">
-                        +{{ project.techStack.length - 3 }}
+                        +{{ getProjectTags(project).length - 3 }}
                       </span>
                     }
                   </div>
