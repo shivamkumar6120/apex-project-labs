@@ -25,8 +25,9 @@ export class ProjectService {
   }
 
   getRelatedProjects(currentProjectId: string, category: ProjectCategory, limit: number = 3): Project[] {
+    const targetId = currentProjectId.toLowerCase();
     return this.projects
-      .filter((p) => p.id !== currentProjectId && p.category === category)
+      .filter((p) => p.id.toLowerCase() !== targetId && p.category === category)
       .slice(0, limit);
   }
 }
