@@ -14,7 +14,7 @@ export class NavbarComponent {
   isScrolled = false;
   isMobileMenuOpen = false;
   readonly displayPhone = WHATSAPP_DISPLAY_PHONE;
-  readonly whatsappUrl = getWhatsAppUrl("Hi Apex Project Labs, I would like to inquire about your pre-built final year engineering projects.");
+  readonly whatsappUrl = getWhatsAppUrl("Hi Apex Project Labs, I would like to inquire about your engineering projects and solutions.");
 
   constructor(private router: Router) {}
 

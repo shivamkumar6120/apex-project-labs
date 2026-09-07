@@ -11,6 +11,6 @@ import { getWhatsAppUrl } from '../../models/project.model';
 })
 export class WhatsAppButtonComponent {
   readonly whatsappUrl = getWhatsAppUrl(
-    "Hi Apex Project Labs, I'm interested in your pre-built final year engineering projects. Please guide me."
+    "Hi Apex Project Labs, I'm interested in your engineering projects and architectures. Please guide me."
   );
 }

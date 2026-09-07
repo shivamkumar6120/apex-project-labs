@@ -65,7 +65,7 @@ export class ProjectCatalogComponent implements OnInit {
       return `Found ${this.displayedProjects.length} result${this.displayedProjects.length === 1 ? '' : 's'} matching "${this.searchQuery.trim()}".`;
     }
     if (this.isCategoryFiltered) {
-      return `Full list of ready-to-submit ${this.selectedCategory} projects with verified source code, report, and quick setup support.`;
+      return `Full catalog of industry-grade ${this.selectedCategory} projects with verified source code, architecture reports, and setup support.`;
     }
     return 'A curated showcase featuring 1 signature project from each engineering domain. Select any category above to browse the complete catalog.';
   }

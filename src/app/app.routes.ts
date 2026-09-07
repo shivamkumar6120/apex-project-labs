@@ -6,7 +6,7 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    title: 'Apex Project Labs | Pre-Built Final Year Projects'
+    title: 'Apex Project Labs | Industry-Grade Engineering Projects'
   },
   {
     path: 'project/:id',

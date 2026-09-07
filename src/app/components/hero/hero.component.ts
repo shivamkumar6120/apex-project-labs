@@ -11,7 +11,7 @@ import { getWhatsAppUrl, getCustomProjectWhatsAppUrl } from '../../models/projec
 })
 export class HeroComponent {
   readonly whatsappConsultUrl = getWhatsAppUrl(
-    "Hi Apex Project Labs, I need assistance choosing a high-scoring final year project."
+    "Hi Apex Project Labs, I would like to inquire about your engineering projects and reference architectures."
   );
 
   readonly customProjectUrl = getCustomProjectWhatsAppUrl();
