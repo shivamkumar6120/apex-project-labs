@@ -6,11 +6,11 @@
       <div>
         <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-semibold mb-2 border border-blue-200">
           @if (isSearching) {
-            <span>Search Filter Active</span>
+            <span>Search Active (List View)</span>
           } @else if (isCategoryFiltered) {
-            <span>Filtered by Category</span>
+            <span>{{ selectedCategory }} (List View)</span>
           } @else {
-            <span>Curated Sample</span>
+            <span>Featured Sample (Grid View)</span>
           }
         </div>
         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -26,9 +26,9 @@
         @if (isSearching) {
           <span><strong class="text-slate-900 font-bold">{{ displayedProjects.length }}</strong> results found</span>
         } @else if (isCategoryFiltered) {
-          <span>Showing <strong class="text-slate-900 font-bold">{{ displayedProjects.length }}</strong> projects</span>
+          <span>Showing all <strong class="text-slate-900 font-bold">{{ displayedProjects.length }}</strong> {{ selectedCategory }} projects</span>
         } @else {
-          <span>Showing <strong class="text-slate-900 font-bold">{{ displayedProjects.length }}</strong> featured of {{ projects.length }} total</span>
+          <span>Showing <strong class="text-slate-900 font-bold">{{ displayedProjects.length }}</strong> featured sample projects</span>
         }
       </div>
     </div>
@@ -76,7 +76,7 @@
               id="projectSearch"
               [(ngModel)]="searchQuery" 
               (ngModelChange)="onSearchChange()"
-              placeholder="Type to search (switches to list view)..." 
+              placeholder="Search Python, WebRTC, ESP32..." 
               class="w-full bg-slate-50 hover:bg-slate-100/80 focus:bg-white text-slate-800 text-sm font-medium rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 py-2.5 pl-9 pr-8 outline-none transition-all" />
             @if (searchQuery) {
               <button 
@@ -132,23 +132,34 @@
     </div>
 
     <!-- ========================================================================= -->
-    <!-- VIEW MODE 1: COMPACT LIST VIEW (Triggered when user is searching)          -->
+    <!-- VIEW MODE 1: COMPACT LIST VIEW                                             -->
+    <!-- Displayed when: (1) user searches OR (2) a specific category is selected   -->
     <!-- ========================================================================= -->
-    @if (isSearching) {
+    @if (isListView) {
       <div class="space-y-4">
+        
+        <!-- List Context Bar -->
         <div class="flex items-center justify-between text-xs text-slate-500 font-medium px-1">
-          <span>Search Results for "<strong class="text-slate-900">{{ searchQuery }}</strong>"</span>
-          <button type="button" (click)="searchQuery = ''; onSearchChange()" class="text-blue-600 hover:text-blue-800 font-semibold cursor-pointer">
-            Clear Search
-          </button>
+          @if (isSearching) {
+            <span>Search Results for "<strong class="text-slate-900">{{ searchQuery }}</strong>"</span>
+            <button type="button" (click)="searchQuery = ''; onSearchChange()" class="text-blue-600 hover:text-blue-800 font-semibold cursor-pointer">
+              Clear Search
+            </button>
+          } @else {
+            <span>Showing all <strong>{{ displayedProjects.length }}</strong> projects in <strong>{{ selectedCategory }}</strong></span>
+            <button type="button" (click)="resetFilters()" class="text-blue-600 hover:text-blue-800 font-semibold cursor-pointer">
+              ← Back to Featured Sample
+            </button>
+          }
         </div>
 
         @if (displayedProjects.length > 0) {
+          <!-- Compact Row-Based List -->
           <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden divide-y divide-slate-100">
             @for (project of displayedProjects; track project.id) {
               <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-50/80 transition-colors">
                 
-                <!-- Left: Title, Badges, Tech -->
+                <!-- Left: Category, Title, Short Desc, Tech -->
                 <div class="flex-grow min-w-0">
                   <div class="flex items-center gap-2 mb-1.5 flex-wrap">
                     <span 
@@ -161,6 +172,11 @@
                       @for (tech of project.techStack.slice(0, 3); track tech) {
                         <span class="text-[11px] text-slate-500 font-mono bg-slate-100 px-1.5 py-0.5 rounded border border-slate-200/60">
                           {{ tech }}
+                        </span>
+                      }
+                      @if (project.techStack.length > 3) {
+                        <span class="text-[10px] text-blue-600 font-mono font-medium">
+                          +{{ project.techStack.length - 3 }}
                         </span>
                       }
                     </div>
@@ -177,7 +193,7 @@
                   </p>
                 </div>
 
-                <!-- Right: Price & CTA Actions -->
+                <!-- Right: Price & Quick CTA Actions -->
                 <div class="flex items-center justify-between sm:justify-end gap-4 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100">
                   <div class="text-left sm:text-right">
                     <span class="text-sm sm:text-base font-bold text-slate-900">
@@ -213,36 +229,43 @@
             }
           </div>
         } @else {
-          <!-- Empty State in Search -->
+          <!-- Empty State -->
           <div class="bg-white rounded-xl border border-slate-200 p-12 text-center max-w-md mx-auto shadow-sm">
             <div class="w-12 h-12 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center text-xl mx-auto mb-3">
               🔍
             </div>
             <h3 class="text-base font-bold text-slate-900 mb-1">No matching projects found</h3>
             <p class="text-xs sm:text-sm text-slate-500 mb-5">
-              We couldn't find any projects matching "{{ searchQuery }}".
+              We couldn't find any projects matching your criteria.
             </p>
             <button 
               type="button" 
               (click)="resetFilters()" 
               class="inline-flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold px-4 py-2 rounded-lg transition-colors cursor-pointer">
-              Clear Filters & Show All
+              Show Featured Projects
             </button>
           </div>
         }
 
-        <!-- Custom Project Banner underneath Search List -->
-        <div class="mt-8 bg-gradient-to-r from-blue-50 via-slate-50 to-indigo-50 border border-blue-200/80 rounded-xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xs">
-          <div class="text-center sm:text-left">
-            <span class="text-xs font-bold text-blue-700 uppercase tracking-wider">Custom Engineering</span>
-            <h4 class="text-base font-bold text-slate-900">Don't see what you need in search results?</h4>
-            <p class="text-xs text-slate-600 mt-0.5">We build completely custom projects tailored to your college guidelines.</p>
+        <!-- "Request a Custom Project" Banner below List View -->
+        <div class="mt-8 bg-gradient-to-r from-blue-50 via-white to-indigo-50 border border-blue-200/90 rounded-xl p-6 sm:p-7 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xs">
+          <div class="text-center sm:text-left space-y-1">
+            <span class="inline-block text-[11px] font-bold text-blue-700 uppercase tracking-wider">
+              Custom Engineering
+            </span>
+            <h4 class="text-lg font-bold text-slate-900">
+              Don't see what you need? Request a Custom Project
+            </h4>
+            <p class="text-xs sm:text-sm text-slate-600 max-w-2xl leading-relaxed">
+              Want a customized version or a completely new project idea? We build fully custom projects tailored to your requirements. Pricing depends on the features and complexity you need — message us on WhatsApp to discuss your requirements and get a quote.
+            </p>
           </div>
+
           <a 
             [href]="customProjectWhatsAppUrl" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-semibold px-4 py-2.5 rounded-lg shadow-sm hover:shadow transition-all shrink-0">
+            class="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-semibold px-5 py-3 rounded-xl shadow-sm hover:shadow transition-all shrink-0 cursor-pointer">
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12.031 2C6.518 2 2.03 6.475 2.03 11.979c0 1.954.566 3.864 1.637 5.512L2 22.081l4.757-1.579a9.923 9.923 0 005.274 1.492h.005c5.512 0 9.999-4.475 9.999-9.98 0-2.668-1.043-5.176-2.935-7.065C17.202 3.06 14.697 2 12.031 2zm5.792 14.153c-.244.686-1.42 1.309-1.961 1.353-.515.042-1.189.06-3.832-.988-3.235-1.284-5.326-4.577-5.487-4.792-.16-.214-1.31-1.745-1.31-3.329 0-1.584.829-2.362 1.123-2.684.294-.321.642-.401.856-.401.214 0 .428.002.615.011.198.009.462-.075.723.551.268.642.91 2.222.989 2.383.08.16.134.348.027.562-.107.214-.16.348-.321.535-.16.188-.337.419-.481.562-.16.16-.328.334-.141.655.187.321.83 1.369 1.78 2.215 1.222 1.088 2.253 1.425 2.574 1.585.321.16.508.134.695-.08.187-.214.802-.936 1.016-1.257.214-.321.428-.268.722-.16.294.107 1.866.882 2.188 1.042.321.16.535.241.615.375.08.134.08.775-.164 1.461z"/>
             </svg>
@@ -253,7 +276,7 @@
     }
 
     <!-- ========================================================================= -->
-    <!-- VIEW MODE 2: CARD GRID VIEW (Default sample view OR Full Category view)    -->
+    <!-- VIEW MODE 2: CARD GRID VIEW (Default "Featured Projects" Sample View Only) -->
     <!-- ========================================================================= -->
     @else {
       @if (displayedProjects.length > 0) {
@@ -293,32 +316,6 @@
             </div>
           </div>
 
-        </div>
-      } @else {
-        <!-- Empty State in Category -->
-        <div class="bg-white rounded-xl border border-slate-200 p-12 text-center max-w-md mx-auto shadow-sm">
-          <div class="w-12 h-12 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center text-xl mx-auto mb-3">
-            📁
-          </div>
-          <h3 class="text-base font-bold text-slate-900 mb-1">No projects in this category yet</h3>
-          <p class="text-xs sm:text-sm text-slate-500 mb-5">
-            We are continuously uploading verified projects. You can request a custom project right now!
-          </p>
-          <div class="flex items-center justify-center gap-3">
-            <button 
-              type="button" 
-              (click)="resetFilters()" 
-              class="inline-flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold px-4 py-2 rounded-lg transition-colors cursor-pointer">
-              Show All Categories
-            </button>
-            <a 
-              [href]="customProjectWhatsAppUrl"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center bg-emerald-600 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-colors">
-              Request on WhatsApp
-            </a>
-          </div>
         </div>
       }
     }

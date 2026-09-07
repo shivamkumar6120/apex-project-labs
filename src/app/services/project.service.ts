@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Project, ProjectCategory } from '../models/project.model';
-import { PROJECTS, PROJECT_CATEGORIES } from '../data/projects.data';
+import { ALL_PROJECTS, PROJECT_CATEGORIES } from '../data/index';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProjectService {
-  private readonly projects: Project[] = PROJECTS;
+  private readonly projects: Project[] = ALL_PROJECTS;
   readonly categories: ProjectCategory[] = PROJECT_CATEGORIES;
 
   getAllProjects(): Project[] {

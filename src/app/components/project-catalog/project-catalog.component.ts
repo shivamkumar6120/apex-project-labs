@@ -45,6 +45,11 @@ export class ProjectCatalogComponent implements OnInit {
     return this.selectedCategory !== 'All Categories';
   }
 
+  get isListView(): boolean {
+    // Both search mode AND category filter mode use the compact list view
+    return this.isSearching || this.isCategoryFiltered;
+  }
+
   get catalogHeading(): string {
     if (this.isSearching) {
       return `Search Results (${this.displayedProjects.length})`;
@@ -60,9 +65,9 @@ export class ProjectCatalogComponent implements OnInit {
       return `Found ${this.displayedProjects.length} result${this.displayedProjects.length === 1 ? '' : 's'} matching "${this.searchQuery.trim()}".`;
     }
     if (this.isCategoryFiltered) {
-      return `Full collection of verified ${this.selectedCategory} projects with source code, report, quick setup help, and detailing.`;
+      return `Full list of ready-to-submit ${this.selectedCategory} projects with verified source code, report, and quick setup support.`;
     }
-    return 'A curated sample of top-scoring projects across CSE specializations and embedded IoT. Select a category above to view the full domain list.';
+    return 'A curated sample of 1–2 featured projects per category. Select any category above to view the full domain list in detail.';
   }
 
   onCategoryChange(category: string): void {
@@ -143,10 +148,8 @@ export class ProjectCatalogComponent implements OnInit {
     const sampleProjects: Project[] = [];
     for (const cat of this.projectService.categories) {
       const projectsInCat = this.projects.filter((p) => p.category === cat);
-      // Take first 1 project per category for a diverse, balanced showcase
-      if (projectsInCat.length > 0) {
-        sampleProjects.push(projectsInCat[0]);
-      }
+      // Sample 1-2 featured projects per category
+      sampleProjects.push(...projectsInCat.slice(0, 2));
     }
 
     this.displayedProjects = this.applySorting(sampleProjects);
