@@ -31,23 +31,31 @@ export class NavbarComponent {
     this.isMobileMenuOpen = false;
   }
 
-  navigateToProjects(): void {
+  navigateToSection(sectionId: string): void {
     this.closeMobileMenu();
     if (this.router.url === '/' || this.router.url.startsWith('/#')) {
-      const catalogEl = document.getElementById('catalog');
-      if (catalogEl) {
-        catalogEl.scrollIntoView({ behavior: 'smooth' });
+      const el = document.getElementById(sectionId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      this.router.navigate(['/'], { fragment: 'catalog' });
+      this.router.navigate(['/'], { fragment: sectionId });
     }
   }
 
+  navigateToProjects(): void {
+    this.navigateToSection('catalog');
+  }
+
+  navigateToHowItWorks(): void {
+    this.navigateToSection('how-it-works');
+  }
+
+  navigateToTestimonials(): void {
+    this.navigateToSection('testimonials');
+  }
+
   navigateToContact(): void {
-    this.closeMobileMenu();
-    const footerEl = document.getElementById('contact');
-    if (footerEl) {
-      footerEl.scrollIntoView({ behavior: 'smooth' });
-    }
+    this.navigateToSection('contact');
   }
 }

@@ -23,7 +23,7 @@
       </a>
 
       <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center gap-8">
+      <nav class="hidden md:flex items-center gap-7">
         <a 
           routerLink="/" 
           routerLinkActive="text-blue-600 font-semibold" 
@@ -36,6 +36,18 @@
           (click)="navigateToProjects()" 
           class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors cursor-pointer">
           Projects
+        </button>
+        <button 
+          type="button" 
+          (click)="navigateToHowItWorks()" 
+          class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors cursor-pointer">
+          How It Works
+        </button>
+        <button 
+          type="button" 
+          (click)="navigateToTestimonials()" 
+          class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors cursor-pointer">
+          Reviews
         </button>
         <button 
           type="button" 
@@ -94,6 +106,18 @@
         (click)="navigateToProjects()" 
         class="w-full text-left block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-100 transition-colors">
         Projects
+      </button>
+      <button 
+        type="button" 
+        (click)="navigateToHowItWorks()" 
+        class="w-full text-left block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-100 transition-colors">
+        How It Works
+      </button>
+      <button 
+        type="button" 
+        (click)="navigateToTestimonials()" 
+        class="w-full text-left block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-100 transition-colors">
+        Reviews
       </button>
       <button 
         type="button" 

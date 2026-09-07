@@ -1,54 +1,167 @@
-<section class="relative bg-gradient-to-b from-white via-slate-50 to-slate-100/60 py-14 sm:py-20 border-b border-slate-200/80 overflow-hidden">
+<section class="relative bg-white py-14 sm:py-20 border-b border-slate-200/80 overflow-hidden">
   <!-- Subtle decorative grid pattern background -->
   <div class="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-60 pointer-events-none"></div>
 
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <!-- Ambient background glow behind visual column -->
+  <div class="absolute top-1/4 right-5 w-96 h-96 bg-gradient-to-br from-blue-100/60 to-indigo-100/40 rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     
-    <!-- Top Pill Badge -->
-    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-5 shadow-2xs">
-      <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-      <span>Ready-to-run projects with 1-on-1 setup help</span>
+    <!-- Top 2-Column Hero Grid (Text Left, Visual Right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center mb-14">
+      
+      <!-- Left Column: Copy & Actions (lg:col-span-7) -->
+      <div class="lg:col-span-7 text-left">
+        
+        <!-- Top Pill Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-5 shadow-2xs">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+          <span>Ready-to-run projects with 1-on-1 setup help</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-[1.18] mb-5">
+          Ready-Made Engineering Projects. <br class="hidden sm:inline" />
+          <span class="text-blue-600">Code, Report & Setup Help Included.</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed mb-8">
+          Pick your project, get the complete source code and report, and let us help you get it running on your machine. Cleanly built, easy to understand, and made with the technologies companies look for.
+        </p>
+
+        <!-- CTAs with Equal Sizing & Distinct Visual Hierarchy -->
+        <div class="flex flex-col sm:flex-row items-center gap-3.5 mb-8">
+          <!-- Primary Action -->
+          <button 
+            type="button" 
+            (click)="scrollToCatalog()" 
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-xs hover:shadow transition-all duration-150 cursor-pointer">
+            <span>Browse Projects Catalog</span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M7 17L17 7H7M17 7V17" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <!-- Secondary Outline Action -->
+          <a 
+            [href]="whatsappConsultUrl" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 font-semibold text-sm px-6 py-3 rounded-xl border border-slate-300 shadow-2xs hover:shadow-xs transition-all duration-150">
+            <svg class="w-4 h-4 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.031 2C6.518 2 2.03 6.475 2.03 11.979c0 1.954.566 3.864 1.637 5.512L2 22.081l4.757-1.579a9.923 9.923 0 005.274 1.492h.005c5.512 0 9.999-4.475 9.999-9.98 0-2.668-1.043-5.176-2.935-7.065C17.202 3.06 14.697 2 12.031 2zm5.792 14.153c-.244.686-1.42 1.309-1.961 1.353-.515.042-1.189.06-3.832-.988-3.235-1.284-5.326-4.577-5.487-4.792-.16-.214-1.31-1.745-1.31-3.329 0-1.584.829-2.362 1.123-2.684.294-.321.642-.401.856-.401.214 0 .428.002.615.011.198.009.462-.075.723.551.268.642.91 2.222.989 2.383.08.16.134.348.027.562-.107.214-.16.348-.321.535-.16.188-.337.419-.481.562-.16.16-.328.334-.141.655.187.321.83 1.369 1.78 2.215 1.222 1.088 2.253 1.425 2.574 1.585.321.16.508.134.695-.08.187-.214.802-.936 1.016-1.257.214-.321.428-.268.722-.16.294.107 1.866.882 2.188 1.042.321.16.535.241.615.375.08.134.08.775-.164 1.461z"/>
+            </svg>
+            <span>Consult on WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Quick Spec Highlights Row -->
+        <div class="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-500 pt-2 border-t border-slate-100">
+          <span class="flex items-center gap-1.5">
+            <span class="text-blue-600 font-bold">✓</span>
+            <span>60+ Verified Codebases</span>
+          </span>
+          <span class="text-slate-300">•</span>
+          <span class="flex items-center gap-1.5">
+            <span class="text-blue-600 font-bold">✓</span>
+            <span>40+ Page IEEE Reports</span>
+          </span>
+          <span class="text-slate-300">•</span>
+          <span class="flex items-center gap-1.5">
+            <span class="text-blue-600 font-bold">✓</span>
+            <span>1-on-1 Setup Support</span>
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Interactive SaaS Visual Block (lg:col-span-5) -->
+      <div class="lg:col-span-5 relative mt-4 lg:mt-0">
+        
+        <!-- Abstract Geometric Tech Mesh SVG Background -->
+        <div class="absolute -inset-4 opacity-40 pointer-events-none">
+          <svg class="w-full h-full" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="140" stroke="#93c5fd" stroke-width="1" stroke-dasharray="4 4"/>
+            <circle cx="200" cy="200" r="80" stroke="#bfdbfe" stroke-width="1"/>
+            <path d="M60 200 H340 M200 60 V340" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2 2"/>
+            <circle cx="100" cy="120" r="4" fill="#3b82f6"/>
+            <circle cx="300" cy="140" r="5" fill="#6366f1"/>
+            <circle cx="280" cy="290" r="4" fill="#0ea5e9"/>
+            <circle cx="120" cy="280" r="5" fill="#3b82f6"/>
+          </svg>
+        </div>
+
+        <!-- Main Code & Architecture Mockup Card -->
+        <div class="relative bg-slate-900 rounded-2xl p-4 sm:p-5 text-left shadow-xl border border-slate-800 text-slate-200">
+          
+          <!-- Terminal Titlebar -->
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3 text-xs">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-rose-500/90"></span>
+              <span class="w-3 h-3 rounded-full bg-amber-500/90"></span>
+              <span class="w-3 h-3 rounded-full bg-emerald-500/90"></span>
+              <span class="ml-2 font-mono text-[11px] text-slate-400">apex-project-runner</span>
+            </div>
+            <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+              BUILD: READY
+            </span>
+          </div>
+
+          <!-- Code Snippet Simulation -->
+          <div class="font-mono text-[11px] sm:text-xs leading-relaxed space-y-1 text-slate-300">
+            <p><span class="text-purple-400 font-semibold">import</span> &#123; ProjectService &#125; <span class="text-purple-400 font-semibold">from</span> <span class="text-emerald-300">'@apex/core'</span>;</p>
+            <p><span class="text-purple-400 font-semibold">import</span> &#123; IEEE_Documentation &#125; <span class="text-purple-400 font-semibold">from</span> <span class="text-emerald-300">'@apex/report'</span>;</p>
+            <p class="text-slate-500">// Initialize verified architecture modules</p>
+            <p><span class="text-blue-400 font-semibold">const</span> project = <span class="text-yellow-400 font-semibold">await</span> launch(&#123;</p>
+            <p class="pl-4">sourceCode: <span class="text-emerald-300">'tested-out-of-box'</span>,</p>
+            <p class="pl-4">reportPages: <span class="text-amber-300">42</span>, <span class="text-slate-500">// IEEE standard</span></p>
+            <p class="pl-4">supportMode: <span class="text-blue-300">'1-on-1-whatsapp'</span></p>
+            <p>&#125;);</p>
+          </div>
+
+          <!-- Output Log Bar -->
+          <div class="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] font-mono">
+            <span class="text-emerald-400 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Local Server: localhost:8080</span>
+            </span>
+            <span class="text-slate-400 text-[10px]">0 errors • 100% test coverage</span>
+          </div>
+
+        </div>
+
+        <!-- Floating Glassmorphism Overlay Card 1: Deliverables Badge -->
+        <div class="absolute -top-5 -right-3 bg-white/95 backdrop-blur-md rounded-xl p-3 border border-slate-200/90 shadow-md flex items-center gap-3 text-left">
+          <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm border border-blue-100">
+            📄
+          </div>
+          <div>
+            <div class="text-xs font-bold text-slate-900">40+ Page IEEE Report</div>
+            <div class="text-[10px] text-slate-500">Architecture Diagrams & SRS</div>
+          </div>
+        </div>
+
+        <!-- Floating Glassmorphism Overlay Card 2: 1-on-1 Support Badge -->
+        <div class="absolute -bottom-5 -left-3 bg-white/95 backdrop-blur-md rounded-xl p-3 border border-slate-200/90 shadow-md flex items-center gap-3 text-left">
+          <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-sm border border-emerald-100">
+            ⚡
+          </div>
+          <div>
+            <div class="text-xs font-bold text-slate-900 flex items-center gap-1.5">
+              <span>1-on-1 Setup Support</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            </div>
+            <div class="text-[10px] text-slate-500">Engineers Connected on WhatsApp</div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
-    <!-- Main Headline -->
-    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight leading-[1.18] max-w-3xl mx-auto mb-5">
-      Ready-Made Engineering Projects. <br class="hidden sm:inline" />
-      <span class="text-blue-600">Code, Report & Setup Help Included.</span>
-    </h1>
-
-    <!-- Subheadline -->
-    <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">
-      Pick your project, get the complete source code and report, and let us help you get it running on your machine. Cleanly built, easy to understand, and made with the technologies companies look for.
-    </p>
-
-    <!-- CTAs with Equal Sizing & Distinct Visual Hierarchy -->
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 mb-14">
-      <!-- Primary Action -->
-      <button 
-        type="button" 
-        (click)="scrollToCatalog()" 
-        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-xs hover:shadow transition-all duration-150 cursor-pointer">
-        <span>Browse Projects Catalog</span>
-        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-          <path d="M7 17L17 7H7M17 7V17" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-
-      <!-- Secondary Outline Action -->
-      <a 
-        [href]="whatsappConsultUrl" 
-        target="_blank" 
-        rel="noopener noreferrer" 
-        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-700 hover:text-slate-900 font-semibold text-sm px-6 py-3 rounded-xl border border-slate-300 shadow-2xs hover:shadow-xs transition-all duration-150">
-        <svg class="w-4 h-4 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12.031 2C6.518 2 2.03 6.475 2.03 11.979c0 1.954.566 3.864 1.637 5.512L2 22.081l4.757-1.579a9.923 9.923 0 005.274 1.492h.005c5.512 0 9.999-4.475 9.999-9.98 0-2.668-1.043-5.176-2.935-7.065C17.202 3.06 14.697 2 12.031 2zm5.792 14.153c-.244.686-1.42 1.309-1.961 1.353-.515.042-1.189.06-3.832-.988-3.235-1.284-5.326-4.577-5.487-4.792-.16-.214-1.31-1.745-1.31-3.329 0-1.584.829-2.362 1.123-2.684.294-.321.642-.401.856-.401.214 0 .428.002.615.011.198.009.462-.075.723.551.268.642.91 2.222.989 2.383.08.16.134.348.027.562-.107.214-.16.348-.321.535-.16.188-.337.419-.481.562-.16.16-.328.334-.141.655.187.321.83 1.369 1.78 2.215 1.222 1.088 2.253 1.425 2.574 1.585.321.16.508.134.695-.08.187-.214.802-.936 1.016-1.257.214-.321.428-.268.722-.16.294.107 1.866.882 2.188 1.042.321.16.535.241.615.375.08.134.08.775-.164 1.461z"/>
-        </svg>
-        <span>Consult on WhatsApp</span>
-      </a>
-    </div>
-
-    <!-- Trust Features Cards (3 cards, approachable layout) -->
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 text-left max-w-4xl mx-auto">
+    <!-- Trust Features Cards (3 cards, approachable layout, exact copy preserved) -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 text-left max-w-7xl mx-auto">
       
       <div class="bg-white p-5 rounded-xl border border-slate-200/90 shadow-2xs hover:shadow-xs transition-all">
         <div class="w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm mb-3.5 border border-blue-100">
@@ -78,3 +191,4 @@
 
   </div>
 </section>
+
