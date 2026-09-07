@@ -4,6 +4,15 @@ import { Router, RouterLink } from '@angular/router';
 import { WHATSAPP_DISPLAY_PHONE, WHATSAPP_PHONE, getWhatsAppUrl, getCustomProjectWhatsAppUrl } from '../../models/project.model';
 import { PROJECT_CATEGORIES } from '../../data/index';
 
+const CATEGORY_TO_SLUG: Record<string, string> = {
+  'AI/ML': 'ai-ml',
+  'Data Science': 'data-science',
+  'Web Dev': 'web-dev',
+  'App Dev': 'app-dev',
+  'Cybersecurity': 'cybersecurity',
+  'Blockchain': 'blockchain'
+};
+
 @Component({
   selector: 'app-footer',
   standalone: true,
@@ -23,6 +32,10 @@ export class FooterComponent {
 
   constructor(private router: Router) {}
 
+  getCategorySlug(category: string): string {
+    return CATEGORY_TO_SLUG[category] || category.toLowerCase().replace(/[\/\s]+/g, '-');
+  }
+
   scrollToTop(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -38,3 +51,4 @@ export class FooterComponent {
     }
   }
 }
+

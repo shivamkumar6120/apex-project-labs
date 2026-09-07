@@ -99,12 +99,11 @@
             </button>
           </li>
           <li>
-            <button 
-              type="button" 
-              (click)="scrollToSection('catalog')" 
-              class="text-slate-600 hover:text-blue-600 transition-colors cursor-pointer text-left">
+            <a 
+              routerLink="/projects" 
+              class="text-slate-600 hover:text-blue-600 transition-colors text-left">
               Browse Projects
-            </button>
+            </a>
           </li>
           <li>
             <button 
@@ -132,12 +131,11 @@
         <ul class="space-y-2.5 text-xs sm:text-sm">
           @for (cat of categories; track cat) {
             <li>
-              <button 
-                type="button" 
-                (click)="scrollToSection('catalog')" 
-                class="text-slate-600 hover:text-blue-600 transition-colors cursor-pointer text-left">
+              <a 
+                [routerLink]="['/projects', getCategorySlug(cat)]" 
+                class="text-slate-600 hover:text-blue-600 transition-colors text-left">
                 {{ cat }} Projects
-              </button>
+              </a>
             </li>
           }
         </ul>

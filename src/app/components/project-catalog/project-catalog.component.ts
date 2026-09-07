@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
@@ -10,6 +10,16 @@ import {
   getCatalogCustomProjectWhatsAppUrl 
 } from '../../models/project.model';
 
+export interface CategoryTile {
+  name: string;
+  title: string;
+  description: string;
+  icon: string;
+  badgeBg: string;
+  statusTag?: string;
+  projectCount: number;
+}
+
 @Component({
   selector: 'app-project-catalog',
   standalone: true,
@@ -17,10 +27,21 @@ import {
   templateUrl: './project-catalog.component.html',
   styleUrl: './project-catalog.component.scss'
 })
-export class ProjectCatalogComponent implements OnInit {
+export class ProjectCatalogComponent implements OnInit, OnChanges {
+  /** When set by a parent (e.g. ProjectsPage), the catalog initializes with this category filter */
+  @Input() initialCategory: string = '';
+
   projects: Project[] = [];
   displayedProjects: Project[] = [];
   categories: string[] = [];
+  categoryTiles: CategoryTile[] = [];
+
+  readonly sortOptions = [
+    { value: 'featured', label: 'Featured First' },
+    { value: 'price-low', label: 'Price: Low to High' },
+    { value: 'price-high', label: 'Price: High to Low' },
+    { value: 'title', label: 'Alphabetical (A–Z)' }
+  ];
 
   selectedCategory: string = 'Featured';
   searchQuery: string = '';
@@ -37,7 +58,25 @@ export class ProjectCatalogComponent implements OnInit {
   ngOnInit(): void {
     this.projects = this.projectService.getAllProjects();
     this.categories = ['Featured', 'All Categories', ...this.projectService.categories];
+    this.initializeCategoryTiles();
+    this.applyInitialCategory();
     this.updateCatalogDisplay();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['initialCategory'] && !changes['initialCategory'].firstChange) {
+      this.applyInitialCategory();
+      this.updateCatalogDisplay();
+    }
+  }
+
+  private applyInitialCategory(): void {
+    if (this.initialCategory) {
+      this.selectedCategory = this.initialCategory;
+      this.currentPage = 1;
+      this.searchQuery = '';
+      this.sortBy = 'featured';
+    }
   }
 
   get isSearching(): boolean {
@@ -57,15 +96,20 @@ export class ProjectCatalogComponent implements OnInit {
     return this.isSearching || this.isCategoryFiltered || this.isAllCategories;
   }
 
+  formatProjectCount(count: number): string {
+    if (count < 10) return `${count}`;
+    return `${Math.floor(count / 10) * 10}+`;
+  }
+
   get catalogHeading(): string {
     if (this.isSearching) {
       return `Search Results (${this.displayedProjects.length})`;
     }
     if (this.isCategoryFiltered) {
-      return `${this.selectedCategory} Projects (${this.displayedProjects.length})`;
+      return `${this.selectedCategory} Projects (${this.formatProjectCount(this.displayedProjects.length)} Projects)`;
     }
     if (this.isAllCategories) {
-      return `All Engineering Projects (${this.displayedProjects.length})`;
+      return `All Engineering Projects (${this.formatProjectCount(this.displayedProjects.length)} Projects)`;
     }
     return 'Featured Projects';
   }
@@ -196,12 +240,80 @@ export class ProjectCatalogComponent implements OnInit {
     this.updateCatalogDisplay();
   }
 
+  get projectCategoriesList(): string[] {
+    return this.projectService.categories;
+  }
+
+  getCategoryCount(categoryName: string): number {
+    return this.projects.filter((p) => p.category === categoryName).length;
+  }
+
+  selectCategoryTile(catName: string): void {
+    this.onCategoryChange(catName);
+    this.scrollToResultsTop();
+  }
+
   getProjectWhatsAppUrl(title: string): string {
     return getProjectWhatsAppUrl(title);
   }
 
   getCategoryBadgeClass(_category?: string): string {
     return 'bg-blue-50 text-blue-700 border-blue-200/90';
+  }
+
+  private initializeCategoryTiles(): void {
+    this.categoryTiles = [
+      {
+        name: 'AI/ML',
+        title: 'AI & Machine Learning',
+        description: 'Deep learning models, computer vision, NLP, and intelligent prediction systems.',
+        icon: '🤖',
+        badgeBg: 'bg-indigo-50 border-indigo-200/80 text-indigo-600',
+        statusTag: 'Popular',
+        projectCount: this.getCategoryCount('AI/ML')
+      },
+      {
+        name: 'Data Science',
+        title: 'Data Science',
+        description: 'Predictive forecasting, analytics pipelines, and interactive intelligence dashboards.',
+        icon: '📊',
+        badgeBg: 'bg-blue-50 border-blue-200/80 text-blue-600',
+        projectCount: this.getCategoryCount('Data Science')
+      },
+      {
+        name: 'Web Dev',
+        title: 'Web Development',
+        description: 'Full-stack web architectures, microservices platforms, and REST/GraphQL APIs.',
+        icon: '💻',
+        badgeBg: 'bg-emerald-50 border-emerald-200/80 text-emerald-600',
+        statusTag: 'Popular',
+        projectCount: this.getCategoryCount('Web Dev')
+      },
+      {
+        name: 'App Dev',
+        title: 'App Development',
+        description: 'Cross-platform Flutter & native Android mobile apps with cloud integration.',
+        icon: '📱',
+        badgeBg: 'bg-amber-50 border-amber-200/80 text-amber-600',
+        projectCount: this.getCategoryCount('App Dev')
+      },
+      {
+        name: 'Cybersecurity',
+        title: 'Cybersecurity',
+        description: 'Network vulnerability scanners, threat detection tools, and encryption systems.',
+        icon: '🛡️',
+        badgeBg: 'bg-rose-50 border-rose-200/80 text-rose-600',
+        projectCount: this.getCategoryCount('Cybersecurity')
+      },
+      {
+        name: 'Blockchain',
+        title: 'Blockchain & Web3',
+        description: 'Decentralized applications, Solidity smart contracts, and Web3 security protocols.',
+        icon: '⛓️',
+        badgeBg: 'bg-cyan-50 border-cyan-200/80 text-cyan-700',
+        projectCount: this.getCategoryCount('Blockchain')
+      }
+    ];
   }
 
   private updateCatalogDisplay(): void {

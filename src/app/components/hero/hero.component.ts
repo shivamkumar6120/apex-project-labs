@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { getWhatsAppUrl, getCustomProjectWhatsAppUrl } from '../../models/project.model';
+import { ProjectService } from '../../services/project.service';
 
 @Component({
   selector: 'app-hero',
@@ -9,17 +11,24 @@ import { getWhatsAppUrl, getCustomProjectWhatsAppUrl } from '../../models/projec
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })
-export class HeroComponent {
+export class HeroComponent implements OnInit {
   readonly whatsappConsultUrl = getWhatsAppUrl(
     "Hi Apex Project Labs, I would like to inquire about your engineering projects and reference architectures."
   );
 
   readonly customProjectUrl = getCustomProjectWhatsAppUrl();
+  totalProjectsFormatted: string = '60+';
 
-  scrollToCatalog(): void {
-    const catalogElement = document.getElementById('catalog');
-    if (catalogElement) {
-      catalogElement.scrollIntoView({ behavior: 'smooth' });
-    }
+  constructor(private router: Router, private projectService: ProjectService) {}
+
+  ngOnInit(): void {
+    const total = this.projectService.getAllProjects().length;
+    this.totalProjectsFormatted = `${Math.floor(total / 10) * 10}+`;
+  }
+
+  navigateToProjects(): void {
+    this.router.navigate(['/projects']);
   }
 }
+
+

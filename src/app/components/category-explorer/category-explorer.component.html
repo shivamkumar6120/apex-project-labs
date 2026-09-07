@@ -1,0 +1,79 @@
+<section id="catalog" class="py-16 sm:py-20 bg-white border-b border-slate-200/80">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-3 shadow-2xs">
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+        <span>{{ formatProjectCount(totalProjects) }} Projects</span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+        Explore by Engineering Discipline
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+        Pick a domain to browse complete project kits — each with verified source code, a 40+ page IEEE report, and 1-on-1 setup help on WhatsApp.
+      </p>
+    </div>
+
+    <!-- Category Cards Grid (3 columns desktop) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-10">
+      @for (cat of categoryCards; track cat.name) {
+        <a 
+          [routerLink]="['/projects', cat.slug]"
+          class="group relative bg-white hover:bg-slate-50/70 rounded-2xl border p-5 sm:p-6 shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between border-slate-200/90 no-underline">
+          
+          <div>
+            <!-- Top Row: Pastel Icon Badge & Status Tag -->
+            <div class="flex items-center justify-between mb-4">
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center text-xl border transition-transform duration-200 group-hover:scale-105"
+                   [ngClass]="cat.badgeBg">
+                <span>{{ cat.icon }}</span>
+              </div>
+              
+              @if (cat.statusTag) {
+                <span class="text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-200/80">
+                  {{ cat.statusTag }}
+                </span>
+              }
+            </div>
+
+            <!-- Title & Count -->
+            <div class="flex items-baseline justify-between gap-2 mb-1.5">
+              <h3 class="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                {{ cat.title }}
+              </h3>
+              <span class="text-[11px] font-medium text-slate-400 font-mono shrink-0">
+                {{ formatProjectCount(cat.projectCount) }} Projects
+              </span>
+            </div>
+
+            <!-- One-line description -->
+            <p class="text-xs text-slate-500 leading-relaxed mb-4">
+              {{ cat.description }}
+            </p>
+          </div>
+
+          <!-- Bottom Action: Browse projects link -->
+          <div class="pt-3.5 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600 group-hover:text-blue-700">
+            <span>Browse projects</span>
+            <span class="transition-transform duration-200 group-hover:translate-x-1">→</span>
+          </div>
+
+        </a>
+      }
+    </div>
+
+    <!-- View All Projects CTA -->
+    <div class="text-center">
+      <a 
+        routerLink="/projects" 
+        class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-xs hover:shadow transition-all duration-150">
+        <span>View All {{ formatProjectCount(totalProjects) }} Projects</span>
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M7 17L17 7H7M17 7V17" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>

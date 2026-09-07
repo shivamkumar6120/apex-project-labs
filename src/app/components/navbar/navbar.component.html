@@ -31,12 +31,13 @@
           class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
           Home
         </a>
-        <button 
-          type="button" 
-          (click)="navigateToProjects()" 
-          class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors cursor-pointer">
+        <a 
+          routerLink="/projects" 
+          routerLinkActive="text-blue-600 font-semibold" 
+          [routerLinkActiveOptions]="{ exact: false }" 
+          class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">
           Projects
-        </button>
+        </a>
         <button 
           type="button" 
           (click)="navigateToHowItWorks()" 
@@ -101,12 +102,12 @@
         class="block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-100 transition-colors">
         Home
       </a>
-      <button 
-        type="button" 
-        (click)="navigateToProjects()" 
-        class="w-full text-left block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-100 transition-colors">
+      <a 
+        routerLink="/projects" 
+        (click)="closeMobileMenu()" 
+        class="block px-3 py-2 rounded-lg text-base font-medium text-slate-800 hover:bg-slate-100 transition-colors">
         Projects
-      </button>
+      </a>
       <button 
         type="button" 
         (click)="navigateToHowItWorks()" 
