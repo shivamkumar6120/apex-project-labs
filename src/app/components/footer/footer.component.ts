@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { WHATSAPP_DISPLAY_PHONE, WHATSAPP_PHONE, getWhatsAppUrl } from '../../models/project.model';
+import { WHATSAPP_DISPLAY_PHONE, WHATSAPP_PHONE, getWhatsAppUrl, getCustomProjectWhatsAppUrl } from '../../models/project.model';
 import { PROJECT_CATEGORIES } from '../../data/projects.data';
 
 @Component({
@@ -19,4 +19,5 @@ export class FooterComponent {
   readonly whatsappSupportUrl = getWhatsAppUrl(
     "Hi Apex Project Labs, I have a question regarding college project submissions."
   );
+  readonly customProjectUrl = getCustomProjectWhatsAppUrl();
 }

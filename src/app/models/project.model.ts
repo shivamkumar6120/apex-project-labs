@@ -30,3 +30,11 @@ export function getWhatsAppUrl(message: string): string {
 export function getProjectWhatsAppUrl(projectTitle: string): string {
   return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(`Hi, I'm interested in ${projectTitle}`)}`;
 }
+
+export function getCustomProjectWhatsAppUrl(): string {
+  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent("Hi, I want a custom project built as per my requirements.")}`;
+}
+
+export function getCatalogCustomProjectWhatsAppUrl(): string {
+  return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent("Hi, I want to request a custom project as per my requirements.")}`;
+}

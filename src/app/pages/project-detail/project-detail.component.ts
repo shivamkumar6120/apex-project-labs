@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProjectService } from '../../services/project.service';
-import { Project, WHATSAPP_DISPLAY_PHONE, WHATSAPP_PHONE, getProjectWhatsAppUrl } from '../../models/project.model';
+import { Project, WHATSAPP_DISPLAY_PHONE, WHATSAPP_PHONE, getProjectWhatsAppUrl, getCustomProjectWhatsAppUrl } from '../../models/project.model';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
 
 @Component({
@@ -21,6 +21,7 @@ export class ProjectDetailComponent implements OnInit {
 
   readonly phoneConstant = WHATSAPP_PHONE;
   readonly displayPhone = WHATSAPP_DISPLAY_PHONE;
+  readonly customProjectWhatsAppUrl = getCustomProjectWhatsAppUrl();
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {

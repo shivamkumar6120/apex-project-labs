@@ -101,47 +101,73 @@
             }
           </div>
 
-          <!-- Deliverables Package Breakdown -->
+          <!-- Deliverables Package Breakdown (ONLY 4 Items: Source Code, Report, Quick Setup Help, Project Detailing) -->
           <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-6 sm:p-8">
             <h2 class="text-xl font-bold text-slate-900 flex items-center gap-2 mb-2">
               <span>📦</span> Complete Project Submission Kit
             </h2>
             <p class="text-xs sm:text-sm text-slate-500 mb-6">
-              Included in the instant zip archive provided for college review and final evaluation:
+              Everything included in the package so you can understand, run, and submit your project with full confidence:
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
                 <div class="text-2xl mb-2">💻</div>
-                <h4 class="font-bold text-sm text-slate-900 mb-1">1. Full Source Code</h4>
+                <h4 class="font-bold text-sm text-slate-900 mb-1">1. Source Code</h4>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  Clean, well-commented code, requirements.txt / package.json, and one-click launch scripts.
+                  Clean, modular, and thoroughly commented codebase with setup guide, dependency configurations, and launch scripts.
                 </p>
               </div>
 
               <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
                 <div class="text-2xl mb-2">📑</div>
-                <h4 class="font-bold text-sm text-slate-900 mb-1">2. IEEE Format Report</h4>
+                <h4 class="font-bold text-sm text-slate-900 mb-1">2. Report</h4>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  40+ page editable DOCX/PDF documentation: Literature review, SRS, UML diagrams, test cases.
+                  Comprehensive 40+ page IEEE format documentation covering literature survey, SRS, UML diagrams, test cases, and references.
                 </p>
               </div>
 
               <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-                <div class="text-2xl mb-2">📊</div>
-                <h4 class="font-bold text-sm text-slate-900 mb-1">3. Presentation Slides (PPT)</h4>
+                <div class="text-2xl mb-2">⚡</div>
+                <h4 class="font-bold text-sm text-slate-900 mb-1">3. Quick Setup Help</h4>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  Professional PowerPoint slide deck with system architecture flows and viva speaker notes.
+                  Instant WhatsApp connect with setup and installation help included, so you can get the project running quickly after purchase.
                 </p>
               </div>
 
               <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-                <div class="text-2xl mb-2">🎬</div>
-                <h4 class="font-bold text-sm text-slate-900 mb-1">4. Video Demo & Viva Q&A</h4>
+                <div class="text-2xl mb-2">🔍</div>
+                <h4 class="font-bold text-sm text-slate-900 mb-1">4. Project Detailing</h4>
                 <p class="text-xs text-slate-600 leading-relaxed">
-                  Step-by-step project demonstration screen recording + top 25 probable viva questions with answers.
+                  Comprehensive explanation of how the project works, underlying logic, module workflows, and algorithm walkthroughs.
                 </p>
               </div>
+            </div>
+          </div>
+
+          <!-- "Need a Custom Project?" Callout Section -->
+          <div class="bg-gradient-to-br from-blue-50 to-indigo-50/50 rounded-xl border border-blue-200/80 p-6 sm:p-8 shadow-sm">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+              <div class="space-y-2">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 text-xs font-bold">
+                  <span>Custom Development</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900">Need a Custom Project?</h3>
+                <p class="text-xs sm:text-sm text-slate-600 max-w-xl leading-relaxed">
+                  Want a customized version or a completely new project idea? We build fully custom projects tailored to your requirements. Pricing depends on the features and complexity you need — message us on WhatsApp to discuss your requirements and get a quote.
+                </p>
+              </div>
+
+              <a 
+                [href]="customProjectWhatsAppUrl" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm px-5 py-3 rounded-xl shadow-sm hover:shadow transition-all whitespace-nowrap self-stretch sm:self-auto cursor-pointer">
+                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.031 2C6.518 2 2.03 6.475 2.03 11.979c0 1.954.566 3.864 1.637 5.512L2 22.081l4.757-1.579a9.923 9.923 0 005.274 1.492h.005c5.512 0 9.999-4.475 9.999-9.98 0-2.668-1.043-5.176-2.935-7.065C17.202 3.06 14.697 2 12.031 2zm5.792 14.153c-.244.686-1.42 1.309-1.961 1.353-.515.042-1.189.06-3.832-.988-3.235-1.284-5.326-4.577-5.487-4.792-.16-.214-1.31-1.745-1.31-3.329 0-1.584.829-2.362 1.123-2.684.294-.321.642-.401.856-.401.214 0 .428.002.615.011.198.009.462-.075.723.551.268.642.91 2.222.989 2.383.08.16.134.348.027.562-.107.214-.16.348-.321.535-.16.188-.337.419-.481.562-.16.16-.328.334-.141.655.187.321.83 1.369 1.78 2.215 1.222 1.088 2.253 1.425 2.574 1.585.321.16.508.134.695-.08.187-.214.802-.936 1.016-1.257.214-.321.428-.268.722-.16.294.107 1.866.882 2.188 1.042.321.16.535.241.615.375.08.134.08.775-.164 1.461z"/>
+                </svg>
+                <span>Discuss on WhatsApp</span>
+              </a>
             </div>
           </div>
 
@@ -162,7 +188,7 @@
                 <span class="text-xs text-slate-400 font-medium">all-inclusive</span>
               </div>
               <div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
-                <span>⚡ Instant WhatsApp Delivery</span>
+                <span>⚡ Instant Setup Support Included</span>
               </div>
             </div>
 
@@ -186,23 +212,23 @@
               </p>
             </div>
 
-            <!-- Inclusions Checklist -->
+            <!-- Inclusions Checklist (ONLY 4 Core Items) -->
             <div class="space-y-2.5 pt-4 border-t border-slate-100 text-xs text-slate-600">
               <div class="flex items-center gap-2">
                 <span class="text-emerald-600 font-bold">✓</span>
-                <span>Instant zip archive via WhatsApp / Email</span>
+                <span>Complete Source Code</span>
               </div>
               <div class="flex items-center gap-2">
                 <span class="text-emerald-600 font-bold">✓</span>
-                <span>AnyDesk remote setup & demo assistance</span>
+                <span>Full IEEE Project Report</span>
               </div>
               <div class="flex items-center gap-2">
                 <span class="text-emerald-600 font-bold">✓</span>
-                <span>100% bug-free guarantee</span>
+                <span>Quick Setup & Installation Help</span>
               </div>
               <div class="flex items-center gap-2">
                 <span class="text-emerald-600 font-bold">✓</span>
-                <span>Plagiarism-checked documentation</span>
+                <span>Project Detailing & Logic Explanation</span>
               </div>
             </div>
 
