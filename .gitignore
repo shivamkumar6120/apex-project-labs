@@ -11,6 +11,12 @@
 /bazel-out
 /tmp
 /temp
+/node_modules
+/dist
+/.angular
+/.vscode
+*.log
+.DS_Store
 
 # ------------------------------------------------------------------------------
 # Dependencies & Package Managers
