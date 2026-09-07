@@ -199,5 +199,23 @@ export const WEB_DEV_PROJECTS: Project[] = [
       'Organizer dashboard with ticket sales volume and revenue charts',
       'Comprehensive project report with high-level architecture and SQL tables'
     ]
+  },
+  {
+    id: 'web-nexbuy-microservices',
+    title: 'NexBuy — Microservices E-Commerce Platform',
+    category: 'Web Dev',
+    techStack: ['Angular', 'Spring Boot', 'Spring Cloud', 'Netflix Eureka', 'Apache Kafka', 'Docker', 'MySQL'],
+    price: 11999,
+    shortDescription: 'Scalable distributed e-commerce platform built on Spring Cloud microservices with Eureka service discovery and Kafka event-driven messaging.',
+    fullDescription: 'An enterprise distributed e-commerce platform engineered for high availability and fault isolation. Decomposes core retail operations into five independent microservices (Product Catalog, Order Processing, Payment Gateway, Inventory Management, and User Authentication). Implements Spring Cloud Gateway for unified ingress with JWT validation, Netflix Eureka for dynamic service registration and load balancing, Apache Kafka for asynchronous order event choreography, and full Docker containerization across isolated MySQL service databases.',
+    imageUrl: 'https://images.unsplash.com/photo-1556742049-0a67e5572293?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Independent domain microservices (Product, Order, Payment, Inventory, User Auth) with isolated MySQL databases',
+      'Spring Cloud Gateway providing centralized client routing, rate limiting, and JWT token validation',
+      'Netflix Eureka Service Registry enabling dynamic service discovery and client-side load balancing',
+      'Apache Kafka event streaming topics for asynchronous order fulfillment and inventory reservation',
+      'Docker Compose multi-container orchestration with service health checks and full Postman API test collection'
+    ]
   }
 ];
