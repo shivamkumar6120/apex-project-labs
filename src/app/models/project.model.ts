@@ -4,19 +4,37 @@ export type ProjectCategory =
   | 'Web Dev'
   | 'App Dev'
   | 'Cybersecurity'
-  | 'Blockchain';
+  | 'Blockchain'
+  | 'MBA/BBA';
+
+export type ProjectType = 'technical' | 'research';
 
 export interface Project {
   id: string;
   title: string;
   category: ProjectCategory;
-  techStack: string[];
+  techStack?: string[];
+  researchAreas?: string[];
+  projectType?: ProjectType;
   price: number;
   shortDescription: string;
   fullDescription: string;
   imageUrl: string;
   deliverables: string[];
   features?: string[];
+}
+
+/** Existing tech catalog entries omit projectType; treat them as technical builds. */
+export function isResearchProject(project: Project): boolean {
+  return project.projectType === 'research';
+}
+
+/** Tags shown on cards/filters: research areas for MBA/BBA, tech stack otherwise. */
+export function getProjectTags(project: Project): string[] {
+  if (isResearchProject(project)) {
+    return project.researchAreas ?? [];
+  }
+  return project.techStack ?? [];
 }
 
 export const WHATSAPP_PHONE = '919209645820';

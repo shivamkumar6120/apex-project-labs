@@ -199,5 +199,257 @@ export const DATA_SCIENCE_PROJECTS: Project[] = [
       'Interactive Plotly inventory depletion waterfall graphs',
       'Complete documentation with supply chain management formulations'
     ]
+  },
+  {
+    id: 'ds-employee-attrition-predictor',
+    title: 'Employee Attrition Predictor',
+    category: 'Data Science',
+    techStack: ['Python', 'Scikit-Learn', 'XGBoost', 'Streamlit'],
+    price: 4199,
+    shortDescription: 'Predicts which employees are likely to leave using HR data such as tenure, overtime, and satisfaction scores.',
+    fullDescription: 'Helps HR teams spot attrition risk before people resign. Trains a classification model on workplace data—department, overtime, last appraisal, and commute—and ranks employees by leaving probability. A Streamlit dashboard shows risk tiers and the factors that most influence each prediction.',
+    imageUrl: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'HR dataset cleaning and feature engineering for attrition modeling',
+      'XGBoost classifier with high/medium/low risk banding',
+      'Factor importance view explaining why an employee is flagged',
+      'Streamlit HR dashboard with batch CSV scoring',
+      'Project report with ROC metrics and retention discussion'
+    ]
+  },
+  {
+    id: 'ds-loan-approval-prediction',
+    title: 'Loan Approval Prediction System',
+    category: 'Data Science',
+    techStack: ['Python', 'Scikit-Learn', 'Pandas', 'Flask'],
+    price: 4099,
+    shortDescription: 'Estimates loan approval chances from applicant income, credit history, and existing debts with a clear yes/no score.',
+    fullDescription: 'A banking analytics project that predicts whether a loan application is likely to be approved. Uses applicant income, credit history, loan amount, and dependents to produce an approval probability. The Flask form is designed for classroom demos with both single-applicant and batch CSV modes.',
+    imageUrl: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Applicant feature form covering income, credit history, and loan size',
+      'Classification model returning approve/reject with probability',
+      'Batch scoring for CSV lists of applications',
+      'Flask interface with result explanation for each decision',
+      'Evaluation notebook with precision, recall, and confusion matrix'
+    ]
+  },
+  {
+    id: 'ds-diabetes-prediction',
+    title: 'Diabetes Prediction using Health Data',
+    category: 'Data Science',
+    techStack: ['Python', 'Scikit-Learn', 'Pandas', 'Streamlit'],
+    price: 3999,
+    shortDescription: 'Predicts diabetes risk from health measures such as glucose, BMI, age, and blood pressure using a trained model.',
+    fullDescription: 'A healthcare analytics tool trained on standard clinical indicators. Users enter glucose, BMI, age, insulin, and related measures to receive a risk label and probability. Built as a Streamlit app with clean charts so medical and CS students can present the workflow easily.',
+    imageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Health-indicator form based on widely used diabetes datasets',
+      'Trained classifier with risk probability and class label',
+      'Simple visual explanation of the most influential inputs',
+      'Streamlit UI suitable for live project demonstration',
+      'Report covering data cleaning, model comparison, and metrics'
+    ]
+  },
+  {
+    id: 'ds-social-media-sentiment',
+    title: 'Twitter/Social Media Sentiment Dashboard',
+    category: 'Data Science',
+    techStack: ['Python', 'NLTK', 'Pandas', 'Plotly'],
+    price: 4299,
+    shortDescription: 'Reads social media posts, labels them as positive, negative, or neutral, and shows trend charts by topic or hashtag.',
+    fullDescription: 'Turns a stream of tweets or exported posts into a sentiment dashboard. Cleans text, scores polarity, and plots daily mood around a brand, event, or campus topic. Includes hashtag filters, sample datasets, and Plotly charts for presentations.',
+    imageUrl: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Text cleaning and sentiment labeling for tweets or CSV exports',
+      'Positive, negative, and neutral breakdown by day or hashtag',
+      'Interactive Plotly charts for volume and mood trends',
+      'Keyword and hashtag filters for campaign-style analysis',
+      'Documentation with sample social datasets and scoring method'
+    ]
+  },
+  {
+    id: 'ds-retail-demand-forecasting',
+    title: 'Retail Demand Forecasting Tool',
+    category: 'Data Science',
+    techStack: ['Python', 'Prophet', 'Pandas', 'Streamlit'],
+    price: 4399,
+    shortDescription: 'Forecasts product-level retail demand using past sales, seasonality, and promotion dates to reduce stockouts.',
+    fullDescription: 'Helps stores plan how much of each SKU to keep in stock. Builds weekly demand forecasts from historical sales, holidays, and promo flags, then shows expected units with uncertainty bands. Distinct from store-wide sales dashboards by focusing on item-level replenishment.',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'SKU-level time-series forecasts with holiday and promo effects',
+      'Uncertainty bands to support safety-stock decisions',
+      'Streamlit planner comparing forecast vs actual units',
+      'CSV upload for store sales history',
+      'Report with MAPE/RMSE tables and forecast plots'
+    ]
+  },
+  {
+    id: 'ds-customer-segmentation-clustering',
+    title: 'Customer Segmentation using Clustering',
+    category: 'Data Science',
+    techStack: ['Python', 'Scikit-Learn', 'K-Means', 'Seaborn'],
+    price: 3999,
+    shortDescription: 'Groups customers into clusters using spending, visits, and demographics so marketing teams can target each group.',
+    fullDescription: 'Segments shoppers with unsupervised clustering on demographics and buying behavior. Finds a practical number of clusters, labels each group, and visualizes them for campaign planning. Complements RFM buying-pattern work by focusing on mixed demographic and behavioral features.',
+    imageUrl: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'K-Means clustering with Elbow and Silhouette checks',
+      'Customer personas generated from cluster centroids',
+      '2D scatter and profile bar charts for each segment',
+      'Jupyter notebooks ready for viva walkthrough',
+      'Report describing feature scaling and cluster interpretation'
+    ]
+  },
+  {
+    id: 'ds-insurance-claim-prediction',
+    title: 'Insurance Claim Prediction System',
+    category: 'Data Science',
+    techStack: ['Python', 'XGBoost', 'Pandas', 'Flask'],
+    price: 4299,
+    shortDescription: 'Predicts whether an insurance claim is likely to be approved or flagged, using policy and incident details.',
+    fullDescription: 'Supports insurance operations by scoring incoming claims. Uses policy type, claim amount, incident data, and customer history to estimate approval likelihood or fraud-risk flags. A Flask app lets users enter a claim and view the predicted outcome with key contributing fields.',
+    imageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Claim scoring model using policy and incident features',
+      'Approve vs review flags with probability scores',
+      'Flask form and CSV batch prediction modes',
+      'Feature-importance view for claim reviewers',
+      'Evaluation report with class-balance handling notes'
+    ]
+  },
+  {
+    id: 'ds-sports-performance-analytics',
+    title: 'Sports Performance Analytics Dashboard',
+    category: 'Data Science',
+    techStack: ['Python', 'Pandas', 'Plotly', 'Streamlit'],
+    price: 4099,
+    shortDescription: 'Analyzes player and team stats to show form, comparisons, and performance trends across matches or seasons.',
+    fullDescription: 'A sports analytics dashboard for cricket, football, or similar match data. Loads player statistics, computes form trends, and compares athletes on key metrics such as scoring rate, consistency, and contribution. Streamlit charts make it easy to present insights in a project demo.',
+    imageUrl: 'https://images.unsplash.com/photo-1461896836934-ffe607ba6851?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Player and team stat ingestion from CSV match logs',
+      'Form trend lines and head-to-head comparison charts',
+      'Filter by season, position, or opponent',
+      'Streamlit dashboard with Plotly visuals',
+      'Documentation covering metrics and sample sports datasets'
+    ]
+  },
+  {
+    id: 'ds-real-estate-price-trend',
+    title: 'Real Estate Price Trend Analyzer',
+    category: 'Data Science',
+    techStack: ['Python', 'Pandas', 'Plotly', 'Streamlit'],
+    price: 4199,
+    shortDescription: 'Shows how property prices change by locality and year using historical listing data and trend charts.',
+    fullDescription: 'Focuses on market movement rather than a single house valuation. Loads historical listing prices, groups them by locality and property type, and plots year-over-year trends with moving averages. Useful for students presenting city housing market insights.',
+    imageUrl: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Locality and property-type trend charts from historical listings',
+      'Year-over-year change and moving-average overlays',
+      'Filters for BHK, area, and city zone',
+      'Streamlit explorer with downloadable summary tables',
+      'Report describing data sources and trend calculations'
+    ]
+  },
+  {
+    id: 'ds-employee-performance-dashboard',
+    title: 'Employee Performance Analysis Dashboard',
+    category: 'Data Science',
+    techStack: ['Python', 'Pandas', 'Plotly', 'Dash'],
+    price: 3999,
+    shortDescription: 'Visualizes employee KPIs, appraisal scores, and department comparisons on an interactive HR dashboard.',
+    fullDescription: 'Gives managers a clear view of workforce performance. Aggregates KPI scores, attendance, and appraisal ratings into department and individual charts. Dash filters let you compare teams, spot low performers, and export summary tables for reviews.',
+    imageUrl: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'KPI and appraisal score aggregation by employee and department',
+      'Interactive Dash filters for team and time period',
+      'Comparison charts highlighting top and at-risk performers',
+      'CSV export of review summaries',
+      'Project report with dashboard wireframes and metric definitions'
+    ]
+  },
+  {
+    id: 'ds-crop-yield-prediction',
+    title: 'Crop Yield Prediction using Data Science',
+    category: 'Data Science',
+    techStack: ['Python', 'Scikit-Learn', 'Pandas', 'Streamlit'],
+    price: 4299,
+    shortDescription: 'Predicts crop yield from rainfall, temperature, soil type, and fertilizer use to support farm planning.',
+    fullDescription: 'An agriculture analytics project that estimates expected yield for a crop and region. Combines weather, soil, and input features in a regression model and shows predicted quintals per hectare. Farmers or students can try different rainfall or fertilizer values in the Streamlit form.',
+    imageUrl: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Yield regression using weather, soil, and fertilizer features',
+      'What-if sliders for rainfall and input changes',
+      'Region and crop-type filters with predicted output',
+      'Streamlit farm-planning interface',
+      'Report with model comparison and error metrics'
+    ]
+  },
+  {
+    id: 'ds-movie-data-analysis',
+    title: 'Netflix/Movie Data Analysis Dashboard',
+    category: 'Data Science',
+    techStack: ['Python', 'Pandas', 'Plotly', 'Streamlit'],
+    price: 3999,
+    shortDescription: 'Explores movie and show catalogs to reveal genre trends, ratings, and content added over the years.',
+    fullDescription: 'A content analytics dashboard built on a Netflix-style catalog dataset. Answers questions such as which genres grew fastest, how ratings vary by country, and when most titles were added. Plotly visuals make the story easy to present in a data science viva.',
+    imageUrl: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Genre, country, and rating breakdowns from catalog data',
+      'Yearly content-addition trend charts',
+      'Interactive filters for type, genre, and region',
+      'Streamlit dashboard with Plotly visuals',
+      'EDA notebook and written findings in the project report'
+    ]
+  },
+  {
+    id: 'ds-covid19-data-analysis',
+    title: 'Covid-19 Data Analysis & Visualization',
+    category: 'Data Science',
+    techStack: ['Python', 'Pandas', 'Plotly', 'Folium'],
+    price: 4099,
+    shortDescription: 'Visualizes Covid-19 cases, recoveries, and vaccination progress with time charts and regional maps.',
+    fullDescription: 'Walks through public Covid-19 datasets to show case curves, recovery rates, and vaccination coverage. Includes time-series plots, country comparisons, and a Folium map of regional intensity. Packaged as a reproducible notebook-plus-dashboard project.',
+    imageUrl: 'https://images.unsplash.com/photo-1584118624012-df056829fbd0?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Case, recovery, and vaccination time-series charts',
+      'Country and state comparison tables',
+      'Folium map of regional case intensity',
+      'Reproducible notebooks with public dataset links',
+      'Report summarizing insights and visualization choices'
+    ]
+  },
+  {
+    id: 'ds-ecommerce-sales-analytics',
+    title: 'E-commerce Sales Analytics Dashboard',
+    category: 'Data Science',
+    techStack: ['Python', 'Pandas', 'Plotly', 'Streamlit'],
+    price: 4199,
+    shortDescription: 'Tracks online store sales, top products, and monthly revenue with an interactive e-commerce dashboard.',
+    fullDescription: 'Turns raw order data into store performance insights. Shows revenue by month, best-selling products, category mix, and customer order frequency. Streamlit filters let you slice by region, category, or date range for a complete retail analytics demo.',
+    imageUrl: 'https://images.unsplash.com/photo-1556742049-0a67e5572293?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Monthly revenue and order-volume trend charts',
+      'Top-product and category contribution views',
+      'Region and date-range filters for store performance',
+      'Streamlit dashboard with Plotly visuals',
+      'Sample e-commerce dataset and KPI definitions in the report'
+    ]
   }
 ];

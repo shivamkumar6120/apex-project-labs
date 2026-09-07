@@ -199,5 +199,257 @@ export const AI_ML_PROJECTS: Project[] = [
       'Microphone browser recording integration with FastAPI verification API',
       'Comprehensive project report detailing Equal Error Rate (EER) metrics'
     ]
+  },
+  {
+    id: 'ai-resume-screening',
+    title: 'AI Resume Screening Tool',
+    category: 'AI/ML',
+    techStack: ['Python', 'spaCy', 'Scikit-Learn', 'Flask'],
+    price: 4299,
+    shortDescription: 'Ranks applicant resumes against a job description and highlights matching skills, experience, and missing keywords.',
+    fullDescription: 'Helps recruiters shortlist candidates faster by comparing uploaded resumes with a target job description. Extracts skills, education, and work history using NLP, then scores each resume so hiring teams can see the strongest matches first. Includes a simple web upload screen and a ranked shortlist with skill-gap notes.',
+    imageUrl: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Resume parsing for PDF and DOCX uploads with skill and experience extraction',
+      'Job-description matching score with missing-keyword highlights',
+      'Ranked candidate shortlist view for recruiters',
+      'Flask web interface for upload, scoring, and result export',
+      'Project report covering NLP matching approach and evaluation metrics'
+    ]
+  },
+  {
+    id: 'ai-handwritten-text-converter',
+    title: 'Handwritten Text to Digital Converter',
+    category: 'AI/ML',
+    techStack: ['Python', 'OpenCV', 'TensorFlow', 'Streamlit'],
+    price: 4499,
+    shortDescription: 'Reads handwritten notes from photos and converts them into editable digital text with a simple upload interface.',
+    fullDescription: 'Turns photographed or scanned handwritten pages into clean digital text. Uses image cleanup and a handwriting recognition model so students and offices can search, copy, and store notes without retyping. The Streamlit app accepts image uploads and shows both the original scan and the extracted text.',
+    imageUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Image preprocessing for contrast, noise, and skewed page correction',
+      'Handwriting recognition pipeline converting scans into editable text',
+      'Side-by-side preview of original image and extracted output',
+      'Streamlit upload interface with copy and download options',
+      'Documentation covering model setup and sample handwritten test images'
+    ]
+  },
+  {
+    id: 'ai-career-recommendation',
+    title: 'AI Career Recommendation System',
+    category: 'AI/ML',
+    techStack: ['Python', 'Scikit-Learn', 'Pandas', 'Flask'],
+    price: 4099,
+    shortDescription: 'Suggests suitable career paths from a student’s skills, interests, and academic background using a trained recommendation model.',
+    fullDescription: 'Guides students toward career options that fit their skills, subjects, and interests. Collects a short profile, maps it against a career dataset, and returns ranked role suggestions with skill-gap hints. Built as a Flask web app that is easy to demo in a viva or project presentation.',
+    imageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Student profile form covering skills, subjects, and career interests',
+      'Recommendation model ranking roles with match scores',
+      'Skill-gap tips showing what to learn next for each suggested path',
+      'Flask dashboard with clear result cards for project demos',
+      'Academic report with dataset description and model evaluation'
+    ]
+  },
+  {
+    id: 'ai-spam-email-classifier',
+    title: 'Spam Email Classifier using AI',
+    category: 'AI/ML',
+    techStack: ['Python', 'NLTK', 'Scikit-Learn', 'Flask'],
+    price: 3999,
+    shortDescription: 'Classifies emails as spam or genuine using text features and shows the confidence score for each prediction.',
+    fullDescription: 'Filters unwanted emails by learning from labeled spam and ham datasets. Cleans message text, extracts features, and trains a classifier that labels new emails as spam or genuine with a confidence score. A small Flask UI lets users paste a message and instantly see the result.',
+    imageUrl: 'https://images.unsplash.com/photo-1596526131083-e8c633c841d2?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Text cleaning and feature extraction from email subject and body',
+      'Trained spam vs genuine classifier with confidence scores',
+      'Paste-and-check web form for live predictions',
+      'Accuracy, precision, and confusion-matrix evaluation scripts',
+      'Setup notes and sample email dataset for reproduction'
+    ]
+  },
+  {
+    id: 'ai-object-detection-traffic',
+    title: 'Object Detection for Traffic Monitoring',
+    category: 'AI/ML',
+    techStack: ['Python', 'YOLOv8', 'OpenCV', 'Streamlit'],
+    price: 4799,
+    shortDescription: 'Detects cars, bikes, buses, and pedestrians in traffic videos and counts vehicles for a live monitoring dashboard.',
+    fullDescription: 'A computer vision project for campus or city traffic feeds. Detects vehicles and pedestrians in uploaded or live video, draws bounding boxes, and keeps a running count by class. Useful for congestion demos, parking studies, and smart-city project presentations.',
+    imageUrl: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'YOLOv8 detection for cars, bikes, buses, and pedestrians',
+      'Per-class vehicle counting overlay on video frames',
+      'Support for uploaded MP4 files and webcam input',
+      'Streamlit monitor showing live counts and sample clips',
+      'Project report with detection workflow and sample results'
+    ]
+  },
+  {
+    id: 'ai-personal-fitness-coach',
+    title: 'AI-based Personal Fitness Coach',
+    category: 'AI/ML',
+    techStack: ['Python', 'MediaPipe', 'OpenCV', 'Streamlit'],
+    price: 4399,
+    shortDescription: 'Tracks workout form from a webcam, counts reps, and gives simple posture feedback during common exercises.',
+    fullDescription: 'Acts as a home workout coach using the webcam. Detects body pose, counts repetitions for exercises such as squats and push-ups, and flags poor posture so users can correct form. The Streamlit interface shows pose landmarks, rep counts, and session summaries.',
+    imageUrl: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'MediaPipe pose tracking for common strength exercises',
+      'Automatic repetition counting with rest-break prompts',
+      'Simple posture alerts when form goes out of range',
+      'Session summary with reps completed and duration',
+      'Documentation covering pose landmarks and demo setup'
+    ]
+  },
+  {
+    id: 'ai-sign-language-recognition',
+    title: 'Sign Language Recognition System',
+    category: 'AI/ML',
+    techStack: ['Python', 'OpenCV', 'TensorFlow', 'MediaPipe'],
+    price: 4599,
+    shortDescription: 'Recognizes common sign-language hand gestures from a webcam and displays the matching letter or word on screen.',
+    fullDescription: 'Helps bridge communication by reading hand signs from a live camera feed. Uses hand landmark detection and a trained classifier to map gestures to letters or short words and show the result in real time. Designed as a clear academic demo with a webcam UI and sample gesture set.',
+    imageUrl: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Hand landmark extraction from webcam frames',
+      'Gesture classifier mapping signs to letters or short words',
+      'Live on-screen prediction with confidence display',
+      'Sample gesture dataset and training notebook',
+      'Project report describing model architecture and accuracy'
+    ]
+  },
+  {
+    id: 'ai-voice-assistant-college',
+    title: 'AI Voice Assistant for College Queries',
+    category: 'AI/ML',
+    techStack: ['Python', 'SpeechRecognition', 'NLTK', 'Flask'],
+    price: 4199,
+    shortDescription: 'Answers common college questions by voice, covering admissions, fees, timetable, and campus facilities.',
+    fullDescription: 'A campus helpdesk assistant that listens to spoken questions and replies with college information. Covers frequent queries such as admission dates, fee structure, department contacts, and library hours. Includes speech-to-text, intent matching, and a text fallback for noisy environments.',
+    imageUrl: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Voice input with speech-to-text for common campus questions',
+      'Intent matching for admissions, fees, timetable, and facilities',
+      'Spoken and on-screen answers with a typed fallback option',
+      'Easy-to-edit FAQ knowledge file for college-specific details',
+      'Setup guide for microphone testing and demo scripts'
+    ]
+  },
+  {
+    id: 'ai-music-genre-classification',
+    title: 'Music Genre Classification using AI',
+    category: 'AI/ML',
+    techStack: ['Python', 'Librosa', 'TensorFlow', 'Streamlit'],
+    price: 4299,
+    shortDescription: 'Identifies the genre of an uploaded audio clip such as pop, rock, classical, or hip-hop from sound features.',
+    fullDescription: 'Classifies short music clips into genres by extracting audio features such as spectrograms and MFCCs. Students can upload a track, view the predicted genre, and compare confidence across classes. Built around a Streamlit demo that is easy to run during evaluation.',
+    imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Audio feature extraction using Librosa (MFCCs and spectrograms)',
+      'Genre classifier covering popular categories such as pop, rock, and classical',
+      'Upload interface with predicted genre and confidence bars',
+      'Training notebook and sample audio clips for testing',
+      'Report with model accuracy and feature-importance discussion'
+    ]
+  },
+  {
+    id: 'ai-text-summarization',
+    title: 'Text Summarization Tool using AI',
+    category: 'AI/ML',
+    techStack: ['Python', 'HuggingFace', 'Transformers', 'Flask'],
+    price: 4399,
+    shortDescription: 'Creates short, readable summaries of long articles, notes, or reports while keeping the main points intact.',
+    fullDescription: 'Saves reading time by condensing long documents into a short summary. Users paste text or upload a file, choose a summary length, and receive a concise version that keeps key facts. Useful for students reviewing papers, news articles, or project reports.',
+    imageUrl: 'https://images.unsplash.com/photo-1456327102063-fb5054efe647?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Abstractive summarization using a HuggingFace transformer model',
+      'Adjustable summary length for short or detailed output',
+      'Paste text or upload document support in a Flask UI',
+      'Copy-ready summary output for reports and notes',
+      'Documentation covering model choice and sample test articles'
+    ]
+  },
+  {
+    id: 'ai-plagiarism-checker',
+    title: 'AI Powered Plagiarism Checker',
+    category: 'AI/ML',
+    techStack: ['Python', 'Sentence-Transformers', 'Flask', 'NumPy'],
+    price: 4499,
+    shortDescription: 'Compares submitted text with a document set and flags similar passages with a similarity score.',
+    fullDescription: 'Checks student submissions against a local collection of papers and notes. Converts text into embeddings, measures similarity, and highlights passages that look copied. The Flask dashboard shows an overall score and matched snippets so faculty can review suspected overlap.',
+    imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Sentence embedding comparison against a stored document corpus',
+      'Passage-level highlighting of highly similar text blocks',
+      'Overall similarity score with matched source file names',
+      'Flask upload screen for new submissions and corpus files',
+      'Project report explaining similarity thresholds and evaluation'
+    ]
+  },
+  {
+    id: 'ai-image-caption-generator',
+    title: 'Image Caption Generator using AI',
+    category: 'AI/ML',
+    techStack: ['Python', 'PyTorch', 'Transformers', 'Streamlit'],
+    price: 4599,
+    shortDescription: 'Looks at an uploaded photo and writes a short natural-language caption describing what is in the image.',
+    fullDescription: 'Generates human-readable captions for photos using a vision-language model. Users upload an image and receive a sentence describing objects, scene, and activity. Suitable for accessibility demos, photo albums, and computer vision coursework.',
+    imageUrl: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Image-to-text captioning with a pretrained vision-language model',
+      'Drag-and-drop image upload with instant caption output',
+      'Optional alternative captions for the same photo',
+      'Streamlit demo ready for viva presentation',
+      'Report covering model pipeline and sample caption results'
+    ]
+  },
+  {
+    id: 'ai-emotion-detection',
+    title: 'Emotion Detection from Facial Expressions',
+    category: 'AI/ML',
+    techStack: ['Python', 'OpenCV', 'TensorFlow', 'Streamlit'],
+    price: 4199,
+    shortDescription: 'Detects facial emotions such as happy, sad, angry, and surprised from photos or a live webcam feed.',
+    fullDescription: 'Reads facial expressions and labels the likely emotion in real time. Works with a webcam or uploaded photos and shows the predicted class with a confidence bar. A practical computer vision project for HCI, campus feedback kiosks, or affective computing labs.',
+    imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'Face detection followed by emotion classification on each face',
+      'Support for webcam streams and still image uploads',
+      'On-screen labels for happy, sad, angry, surprise, and related classes',
+      'Confidence bars and session snapshot logging',
+      'Training notes, sample images, and evaluation charts in the report'
+    ]
+  },
+  {
+    id: 'ai-chatbot-rag',
+    title: 'AI Chatbot using RAG (Retrieval-Augmented Generation)',
+    category: 'AI/ML',
+    techStack: ['Python', 'LangChain', 'ChromaDB', 'FastAPI'],
+    price: 4999,
+    shortDescription: 'Answers questions from your own PDFs and notes by retrieving relevant passages before generating a reply.',
+    fullDescription: 'A document-aware chatbot that grounds answers in files you upload, instead of guessing. It splits PDFs or notes into chunks, stores them in a vector database, retrieves the closest passages, and then generates a cited reply. Ideal for college FAQs, lab manuals, and internal documentation demos.',
+    imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=800&q=80',
+    deliverables: ['Source Code', 'Report', 'Quick Setup Help', 'Project Detailing'],
+    features: [
+      'PDF and text ingestion into a ChromaDB vector store',
+      'Retrieval-augmented answers with source passage citations',
+      'FastAPI chat backend with a simple web chat UI',
+      'Upload-and-ask workflow for custom college documents',
+      'Report explaining RAG architecture and hallucination controls'
+    ]
   }
 ];

@@ -5,6 +5,7 @@ import { WEB_DEV_PROJECTS } from './web-dev.data';
 import { APP_DEV_PROJECTS } from './app-dev.data';
 import { CYBERSECURITY_PROJECTS } from './cybersecurity.data';
 import { BLOCKCHAIN_PROJECTS } from './blockchain.data';
+import { MBA_BBA_PROJECTS } from './mba-bba.data';
 
 export * from './ai-ml.data';
 export * from './data-science.data';
@@ -12,6 +13,7 @@ export * from './web-dev.data';
 export * from './app-dev.data';
 export * from './cybersecurity.data';
 export * from './blockchain.data';
+export * from './mba-bba.data';
 
 export const PROJECT_CATEGORIES: ProjectCategory[] = [
   'AI/ML',
@@ -20,6 +22,7 @@ export const PROJECT_CATEGORIES: ProjectCategory[] = [
   'App Dev',
   'Cybersecurity',
   'Blockchain',
+  'MBA/BBA',
 ];
 
 export const ALL_PROJECTS: Project[] = [
@@ -29,6 +32,7 @@ export const ALL_PROJECTS: Project[] = [
   ...APP_DEV_PROJECTS,
   ...CYBERSECURITY_PROJECTS,
   ...BLOCKCHAIN_PROJECTS,
+  ...MBA_BBA_PROJECTS,
 ];
 
 // Alias for seamless backward compatibility
